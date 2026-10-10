@@ -1,4 +1,4 @@
-# BlackTint — car tinting website
+# Tonirovka.md — car tinting website
 
 Angular 22 + Tailwind. Three languages: Romanian (default, `/`), Russian (`/ru`), English (`/en`),
 each with localized URLs (`/servicii`, `/ru/uslugi`, `/en/services`).

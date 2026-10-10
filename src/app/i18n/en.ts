@@ -32,38 +32,38 @@ export const EN: Dict = {
   days: { Mo: 'Mon', Tu: 'Tue', We: 'Wed', Th: 'Thu', Fr: 'Fri', Sa: 'Sat', Su: 'Sun' },
   seo: {
     home: {
-      title: 'Car Window Tinting in Chișinău — Premium Film | BlackTint',
+      title: 'Car Window Tinting in Chișinău — Premium Film | Tonirovka.md',
       description:
         'Car window tinting, heat-rejection film and headlight tinting in Chișinău. Premium carbon and ceramic films, bubble-free install, up to 10-year warranty.',
     },
     services: {
-      title: 'Car Tinting Services in Chișinău | BlackTint',
+      title: 'Car Tinting Services in Chișinău | Tonirovka.md',
       description:
-        'Window tinting, windshield heat-rejection film, headlight and taillight tint, sun strips and tint removal. See all BlackTint services and prices.',
+        'Window tinting, windshield heat-rejection film, headlight and taillight tint, sun strips and tint removal. See all Tonirovka.md services and prices.',
     },
     prices: {
-      title: 'Car Tinting Prices — Online Calculator | BlackTint',
+      title: 'Car Tinting Prices — Online Calculator | Tonirovka.md',
       description:
         'Estimate your car tint price online: body type, standard, carbon or ceramic film. Transparent pricing with no hidden fees.',
     },
     gallery: {
-      title: 'Gallery & Window Tint Levels | BlackTint',
+      title: 'Gallery & Window Tint Levels | Tonirovka.md',
       description:
         'See what 5%, 15%, 20%, 35%, 50% and 70% window tint looks like, plus our recent car tinting work in Chișinău.',
     },
     faq: {
-      title: 'Car Window Tinting FAQ | BlackTint',
+      title: 'Car Window Tinting FAQ | Tonirovka.md',
       description:
-        'How long tinting takes, when you can roll your windows down, which film to choose and how to care for it. Answers from BlackTint experts.',
+        'How long tinting takes, when you can roll your windows down, which film to choose and how to care for it. Answers from Tonirovka.md experts.',
     },
     contacts: {
-      title: 'Contact & Booking — Car Tinting Chișinău | BlackTint',
+      title: 'Contact & Booking — Car Tinting Chișinău | Tonirovka.md',
       description:
-        'Address, phone and opening hours of the BlackTint studio in Chișinău. Book online via WhatsApp or Telegram in seconds.',
+        'Address, phone and opening hours of the Tonirovka.md studio in Chișinău. Book online via WhatsApp or Telegram in seconds.',
     },
     notFound: {
-      title: 'Page not found | BlackTint',
-      description: 'This page does not exist. Return to the BlackTint home page.',
+      title: 'Page not found | Tonirovka.md',
+      description: 'This page does not exist. Return to the Tonirovka.md home page.',
     },
   },
   home: {
@@ -79,7 +79,7 @@ export const EN: Dict = {
       'Move the slider to see how the car looks. The percentage is how much light passes through the glass: the lower it is, the darker the window.',
     servicesTitle: 'What we do',
     servicesText: 'Everything for your glass and lights in one place, with certified materials.',
-    whyTitle: 'Why BlackTint',
+    whyTitle: 'Why Tonirovka.md',
     whyText: 'We tint every car as if it were our own. Every detail matters.',
     why: [
       {
@@ -170,7 +170,7 @@ export const EN: Dict = {
       name: 'Window tinting',
       short: 'Full or partial tint with carbon or ceramic film at the darkness you want.',
       seo: {
-        title: 'Car Window Tinting in Chișinău — from 1000 MDL | BlackTint',
+        title: 'Car Window Tinting in Chișinău — from 1000 MDL | Tonirovka.md',
         description:
           'Car window tinting with carbon and ceramic film from 5% to 70%. Dust-free install, no bubbles, up to 10-year warranty. Quick booking.',
       },
@@ -206,7 +206,7 @@ export const EN: Dict = {
       name: 'Heat-rejection film',
       short: 'Nearly clear film for windshield and side windows — stops heat, not light.',
       seo: {
-        title: 'Heat-Rejection Windshield Film in Chișinău | BlackTint',
+        title: 'Heat-Rejection Windshield Film in Chișinău | Tonirovka.md',
         description:
           'Ceramic heat-rejection film for windshield and windows: up to 70% less heat, 99% UV protection, nearly clear. Professional install with warranty.',
       },
@@ -239,7 +239,7 @@ export const EN: Dict = {
       short:
         'Smoked film for headlights and taillights — aggressive look and stone-chip protection.',
       seo: {
-        title: 'Headlight & Taillight Tinting in Chișinău | BlackTint',
+        title: 'Headlight & Taillight Tinting in Chișinău | Tonirovka.md',
         description:
           'Headlight and taillight tinting with smoked or clear protective film. Sporty look, protection from stone chips and scratches. Same-day install.',
       },
@@ -264,7 +264,7 @@ export const EN: Dict = {
       name: 'Windshield sun strip',
       short: 'Tinted strip across the top of the windshield — protects your eyes from low sun.',
       seo: {
-        title: 'Windshield Sun Strip — from 300 MDL | BlackTint',
+        title: 'Windshield Sun Strip — from 300 MDL | Tonirovka.md',
         description:
           'Tinted sun strip across the top of the windshield. Protection from sunrise and sunset glare, sporty look. Installed in 30 minutes.',
       },
@@ -284,7 +284,7 @@ export const EN: Dict = {
       name: 'Tint removal',
       short: 'We remove old film without damaging the glass or the defroster lines.',
       seo: {
-        title: 'Car Window Tint Removal in Chișinău | BlackTint',
+        title: 'Car Window Tint Removal in Chișinău | Tonirovka.md',
         description:
           'We remove old, faded or bubbling tint without damaging the glass or rear defroster. Complete adhesive cleanup. From 400 MDL.',
       },
@@ -399,7 +399,7 @@ export const EN: Dict = {
     email: 'Email',
     hours: 'Opening hours',
     closed: 'Sunday — closed',
-    mapTitle: 'BlackTint studio map',
+    mapTitle: 'Tonirovka.md studio map',
   },
   booking: {
     title: 'Book online',

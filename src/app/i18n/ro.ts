@@ -32,38 +32,38 @@ export const RO: Dict = {
   days: { Mo: 'Lun', Tu: 'Mar', We: 'Mie', Th: 'Joi', Fr: 'Vin', Sa: 'Sâm', Su: 'Dum' },
   seo: {
     home: {
-      title: 'Tonare auto Chișinău — folie premium, garanție | BlackTint',
+      title: 'Tonare auto Chișinău — folie premium, garanție | Tonirovka.md',
       description:
         'Tonare geamuri auto, folie atermică și tonare faruri în Chișinău. Folii premium carbon și ceramice, montaj fără bule, garanție până la 10 ani. Programează-te azi.',
     },
     services: {
-      title: 'Servicii de tonare auto în Chișinău | BlackTint',
+      title: 'Servicii de tonare auto în Chișinău | Tonirovka.md',
       description:
-        'Tonare geamuri, folie atermică pe parbriz, tonare faruri și stopuri, bandă parasolar și detonare. Vezi toate serviciile și prețurile BlackTint.',
+        'Tonare geamuri, folie atermică pe parbriz, tonare faruri și stopuri, bandă parasolar și detonare. Vezi toate serviciile și prețurile Tonirovka.md.',
     },
     prices: {
-      title: 'Prețuri tonare auto — calculator online | BlackTint',
+      title: 'Prețuri tonare auto — calculator online | Tonirovka.md',
       description:
         'Calculează online prețul tonării pentru mașina ta: tip caroserie, folie standard, carbon sau ceramică. Prețuri transparente, fără costuri ascunse.',
     },
     gallery: {
-      title: 'Galerie lucrări și niveluri de tonare | BlackTint',
+      title: 'Galerie lucrări și niveluri de tonare | Tonirovka.md',
       description:
         'Vezi cum arată tonarea de 5%, 15%, 20%, 35%, 50% și 70% și lucrările noastre de tonare auto realizate în Chișinău.',
     },
     faq: {
-      title: 'Întrebări frecvente despre tonarea auto | BlackTint',
+      title: 'Întrebări frecvente despre tonarea auto | Tonirovka.md',
       description:
-        'Cât durează tonarea, cât timp nu poți coborî geamurile, ce folie să alegi și cum îngrijești tonarea. Răspunsuri de la specialiștii BlackTint.',
+        'Cât durează tonarea, cât timp nu poți coborî geamurile, ce folie să alegi și cum îngrijești tonarea. Răspunsuri de la specialiștii Tonirovka.md.',
     },
     contacts: {
-      title: 'Contacte și programare — tonare auto Chișinău | BlackTint',
+      title: 'Contacte și programare — tonare auto Chișinău | Tonirovka.md',
       description:
-        'Adresa, telefonul și programul studioului BlackTint din Chișinău. Programează-te online prin WhatsApp sau Telegram în câteva secunde.',
+        'Adresa, telefonul și programul studioului Tonirovka.md din Chișinău. Programează-te online prin WhatsApp sau Telegram în câteva secunde.',
     },
     notFound: {
-      title: 'Pagina nu a fost găsită | BlackTint',
-      description: 'Pagina căutată nu există. Revino pe pagina principală BlackTint.',
+      title: 'Pagina nu a fost găsită | Tonirovka.md',
+      description: 'Pagina căutată nu există. Revino pe pagina principală Tonirovka.md.',
     },
   },
   home: {
@@ -80,7 +80,7 @@ export const RO: Dict = {
     servicesTitle: 'Ce facem',
     servicesText:
       'Tot ce ține de geamuri și optică — într-un singur loc, cu materiale certificate.',
-    whyTitle: 'De ce BlackTint',
+    whyTitle: 'De ce Tonirovka.md',
     whyText: 'Facem tonare ca pentru mașina noastră. Fiecare detaliu contează.',
     why: [
       {
@@ -174,7 +174,7 @@ export const RO: Dict = {
       short:
         'Tonare completă sau parțială cu folie carbon ori ceramică, cu nivelul de întunecare dorit.',
       seo: {
-        title: 'Tonare geamuri auto în Chișinău — de la 1000 lei | BlackTint',
+        title: 'Tonare geamuri auto Chișinău — de la 1000 lei | Tonirovka.md',
         description:
           'Tonare geamuri auto cu folie carbon și ceramică, de la 5% la 70%. Montaj în cameră curată, fără bule, garanție până la 10 ani. Programare rapidă.',
       },
@@ -211,7 +211,7 @@ export const RO: Dict = {
       short:
         'Folie aproape transparentă pentru parbriz și geamuri — oprește căldura, nu și lumina.',
       seo: {
-        title: 'Folie atermică pe parbriz în Chișinău | BlackTint',
+        title: 'Folie atermică pe parbriz în Chișinău | Tonirovka.md',
         description:
           'Folie atermică ceramică pentru parbriz și geamuri: reduce căldura până la 70%, blochează 99% UV, transparentă. Montaj profesional cu garanție.',
       },
@@ -244,7 +244,7 @@ export const RO: Dict = {
       short:
         'Folie fumurie pentru faruri și stopuri — aspect agresiv și protecție împotriva pietrelor.',
       seo: {
-        title: 'Tonare faruri și stopuri în Chișinău | BlackTint',
+        title: 'Tonare faruri și stopuri în Chișinău | Tonirovka.md',
         description:
           'Tonare faruri și stopuri cu folie fumurie sau transparentă de protecție. Aspect sport, protecție de pietre și zgârieturi. Montaj în aceeași zi.',
       },
@@ -269,7 +269,7 @@ export const RO: Dict = {
       name: 'Bandă parasolar pe parbriz',
       short: 'Bandă tonată în partea de sus a parbrizului — protejează ochii de soarele jos.',
       seo: {
-        title: 'Bandă parasolar pe parbriz — de la 300 lei | BlackTint',
+        title: 'Bandă parasolar pe parbriz — de la 300 lei | Tonirovka.md',
         description:
           'Bandă parasolar tonată pe partea superioară a parbrizului. Protejează de soarele la răsărit și apus, aspect sport. Montaj în 30 de minute.',
       },
@@ -289,7 +289,7 @@ export const RO: Dict = {
       name: 'Detonare geamuri',
       short: 'Îndepărtăm folia veche fără să deteriorăm sticla sau rezistența de încălzire.',
       seo: {
-        title: 'Detonare geamuri auto — îndepărtare folie | BlackTint',
+        title: 'Detonare geamuri auto — îndepărtare folie | Tonirovka.md',
         description:
           'Îndepărtăm folia veche, decolorată sau cu bule fără a deteriora geamul și firele de încălzire. Curățăm complet adezivul. De la 400 lei.',
       },
@@ -404,7 +404,7 @@ export const RO: Dict = {
     email: 'Email',
     hours: 'Program',
     closed: 'Duminică — zi liberă',
-    mapTitle: 'Harta studioului BlackTint',
+    mapTitle: 'Harta studioului Tonirovka.md',
   },
   booking: {
     title: 'Programare online',

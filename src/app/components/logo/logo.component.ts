@@ -10,8 +10,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <path d="M6 21 L11 11 H25 L22 17 H15 L13 21 Z" fill="#050505" />
       <path d="M15 17 H22 L20 21 H13 Z" fill="#050505" opacity="0.55" />
     </svg>
-    <span class="font-display text-lg font-bold uppercase tracking-tight text-white">
-      Black<span class="text-brand-500">Tint</span>
+    <span class="font-display text-lg font-bold tracking-tight text-white">
+      Tonirovka<span class="text-brand-500">.md</span>
     </span>
   `,
 })

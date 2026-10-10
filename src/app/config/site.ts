@@ -1,9 +1,8 @@
 // Public address of the website, without a trailing slash. Used for canonical links, hreflang,
-// Open Graph URLs and the generated sitemap.xml. Also update it in src/robots.txt.
-// TODO: replace with the real domain once it is connected in Vercel.
-export const SITE_URL = 'https://tonirovka.vercel.app';
+// Open Graph URLs and the generated sitemap.xml and robots.txt.
+export const SITE_URL = 'https://tonirovka.md';
 
-export const SITE_NAME = 'BlackTint';
+export const SITE_NAME = 'Tonirovka.md';
 
 // Default image when a page is shared on social media (1200×630).
 export const SITE_SHARE_IMAGE = {
