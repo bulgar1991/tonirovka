@@ -2,6 +2,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE_HREF } from '@/config/contact';
 import { DEFAULT_LANG, LANGS, OG_LOCALES, PageRef, pathFor } from '@/config/routes';
 import {
   BUSINESS,
+  MAP_URL,
   SITE_ICON,
   SITE_NAME,
   SITE_SHARE_IMAGE,
@@ -125,10 +126,9 @@ function buildJsonLd(ref: PageRef, url: string): JsonLd {
       streetAddress: BUSINESS.address.street,
       addressLocality: BUSINESS.address.city,
       addressRegion: BUSINESS.address.region,
-      postalCode: BUSINESS.address.postalCode,
       addressCountry: BUSINESS.address.country,
     },
-    geo: { '@type': 'GeoCoordinates', latitude: BUSINESS.geo.lat, longitude: BUSINESS.geo.lng },
+    hasMap: MAP_URL,
     areaServed: BUSINESS.address.city,
     openingHoursSpecification: BUSINESS.openingHours.map((h) => ({
       '@type': 'OpeningHoursSpecification',
