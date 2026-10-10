@@ -43,9 +43,9 @@ export const BUSINESS = {
 
 // Social profiles: shown in the footer and listed in schema.org `sameAs`. Empty = hidden.
 export const SOCIAL_LINKS: Record<'instagram' | 'facebook' | 'tiktok', string> = {
-  instagram: 'https://instagram.com/',
-  facebook: 'https://facebook.com/',
-  tiktok: '',
+  instagram: 'https://www.instagram.com/tonirovka.md/',
+  facebook: 'https://www.facebook.com/tonirovka.moldova',
+  tiktok: 'https://www.tiktok.com/@tonirovka.md',
 };
 
 // Photos of finished work: put files in src/assets/images/works/ and list them here.
