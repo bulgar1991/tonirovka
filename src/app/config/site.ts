@@ -1,0 +1,52 @@
+// Public address of the website, without a trailing slash. Used for canonical links, hreflang,
+// Open Graph URLs and the generated sitemap.xml. Also update it in src/robots.txt.
+// TODO: replace with the real domain once it is connected in Vercel.
+export const SITE_URL = 'https://tonirovka.vercel.app';
+
+export const SITE_NAME = 'BlackTint';
+
+// Default image when a page is shared on social media (1200×630).
+export const SITE_SHARE_IMAGE = {
+  path: 'assets/images/seo/og-image.png',
+  width: 1200,
+  height: 630,
+  type: 'image/png',
+};
+
+// Square logo for structured data (Google uses it in search results).
+export const SITE_ICON = 'assets/icons/app/icon-512.png';
+
+// Business details for the footer, contact page and schema.org markup (placeholders - replace).
+export const BUSINESS = {
+  address: {
+    street: 'str. Exemplu 1',
+    city: 'Chișinău',
+    region: 'Chișinău',
+    postalCode: 'MD-2000',
+    country: 'MD',
+  },
+  geo: { lat: 47.0105, lng: 28.8638 },
+  openingHours: [
+    { days: ['Mo', 'Tu', 'We', 'Th', 'Fr'], opens: '09:00', closes: '19:00' },
+    { days: ['Sa'], opens: '10:00', closes: '16:00' },
+  ] as {
+    days: ('Mo' | 'Tu' | 'We' | 'Th' | 'Fr' | 'Sa' | 'Su')[];
+    opens: string;
+    closes: string;
+  }[],
+  priceRange: '$$',
+  currency: 'MDL',
+  foundedYear: 2016,
+  carsDone: 3500,
+  warrantyYears: 10,
+};
+
+// Social profiles: shown in the footer and listed in schema.org `sameAs`. Empty = hidden.
+export const SOCIAL_LINKS: Record<'instagram' | 'facebook' | 'tiktok', string> = {
+  instagram: 'https://instagram.com/',
+  facebook: 'https://facebook.com/',
+  tiktok: '',
+};
+
+// Photos of finished work: put files in src/assets/images/works/ and list them here.
+export const WORKS: { src: string; car: string; vlt: number }[] = [];

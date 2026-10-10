@@ -1,0 +1,92 @@
+@let t = i18n.t();
+@let c = t.contacts;
+<app-page-header [title]="c.h1" [subtitle]="c.intro" />
+
+<section class="pb-16 sm:pb-24">
+  <div class="container-site grid gap-6 lg:grid-cols-[1fr_1.4fr]">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      <a
+        [href]="mapLink"
+        target="_blank"
+        rel="noopener"
+        class="card group flex gap-4 p-6 transition hover:border-brand-600/60"
+      >
+        <span
+          class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
+          ><app-icon name="pin"
+        /></span>
+        <span>
+          <span class="block text-sm text-ink-400">{{ c.address }}</span>
+          <span class="mt-1 block font-semibold text-white group-hover:text-brand-400"
+            >{{ address.street }}, {{ address.city }}</span
+          >
+        </span>
+      </a>
+      <a [href]="phoneHref" class="card group flex gap-4 p-6 transition hover:border-brand-600/60">
+        <span
+          class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
+          ><app-icon name="phone"
+        /></span>
+        <span>
+          <span class="block text-sm text-ink-400">{{ c.phone }}</span>
+          <span
+            class="mt-1 block font-display text-lg font-bold text-white group-hover:text-brand-400"
+            >{{ phone }}</span
+          >
+        </span>
+      </a>
+      <a [href]="emailHref" class="card group flex gap-4 p-6 transition hover:border-brand-600/60">
+        <span
+          class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
+          ><app-icon name="mail"
+        /></span>
+        <span>
+          <span class="block text-sm text-ink-400">{{ c.email }}</span>
+          <span class="mt-1 block font-semibold text-white group-hover:text-brand-400">{{
+            email
+          }}</span>
+        </span>
+      </a>
+      <div class="card flex gap-4 p-6">
+        <span
+          class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
+          ><app-icon name="clock"
+        /></span>
+        <div class="text-sm">
+          <span class="block text-ink-400">{{ c.hours }}</span>
+          <app-opening-hours class="mt-1 block text-white" />
+        </div>
+      </div>
+      <div class="flex gap-3 sm:col-span-2 lg:col-span-1">
+        <a [href]="whatsappUrl" target="_blank" rel="noopener" class="btn btn-primary flex-1"
+          ><app-icon name="chat" [size]="18" />WhatsApp</a
+        >
+        <a [href]="telegramUrl" target="_blank" rel="noopener" class="btn btn-ghost flex-1"
+          ><app-icon name="send" [size]="18" />Telegram</a
+        >
+      </div>
+    </div>
+
+    <div class="min-h-[360px] overflow-hidden rounded-2xl border border-ink-700 bg-ink-900">
+      <iframe
+        [src]="mapEmbed"
+        [title]="c.mapTitle"
+        class="h-full min-h-[360px] w-full grayscale invert-[0.92] hue-rotate-180"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section border-t border-ink-800 bg-ink-900/50" id="booking">
+  <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.5fr]">
+    <div>
+      <h2 class="h2 mt-0">{{ t.booking.title }}</h2>
+      <p class="lead">{{ t.booking.text }}</p>
+    </div>
+    <div class="card p-6 sm:p-8">
+      <app-booking-form />
+    </div>
+  </div>
+</section>

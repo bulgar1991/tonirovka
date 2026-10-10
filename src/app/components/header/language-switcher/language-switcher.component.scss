@@ -1,0 +1,52 @@
+.language-switcher {
+  &--dropdown {
+    @apply relative;
+  }
+
+  &__toggle {
+    @apply flex h-10 cursor-pointer items-center gap-1.5 rounded-full border border-ink-700 bg-transparent px-3.5 text-xs font-bold text-white transition-colors hover:border-brand-500;
+  }
+
+  &__chevron {
+    @apply h-4 w-4 fill-none stroke-current transition-transform duration-200;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    &--open {
+      @apply rotate-180;
+    }
+  }
+
+  &__menu {
+    @apply invisible absolute right-0 top-full mt-2 min-w-[11rem] translate-y-1 rounded-2xl border border-ink-700 bg-ink-900 p-1.5 opacity-0 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] transition-all duration-200;
+
+    &--open {
+      @apply visible translate-y-0 opacity-100;
+    }
+  }
+
+  &__option {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-ink-300 no-underline transition-colors hover:bg-white/5 hover:text-white;
+
+    &--active {
+      @apply bg-brand-600/15 text-white;
+    }
+  }
+
+  &__code {
+    @apply w-6 text-xs font-bold text-brand-400;
+  }
+
+  &--inline {
+    @apply flex gap-2;
+  }
+
+  &__pill {
+    @apply flex-1 rounded-full border border-ink-700 py-2 text-center text-sm font-bold text-ink-300 no-underline transition-colors hover:border-brand-500 hover:text-white;
+
+    &--active {
+      @apply border-brand-500 bg-brand-600 text-white;
+    }
+  }
+}

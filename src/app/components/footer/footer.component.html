@@ -1,0 +1,93 @@
+@let t = i18n.t();
+<footer class="site-footer" data-testid="site-footer">
+  <div class="container-site">
+    <div class="site-footer__grid">
+      <!-- About -->
+      <div>
+        <a [routerLink]="i18n.link('home')" [attr.aria-label]="siteName" data-testid="footer-logo">
+          <app-logo />
+        </a>
+        <p class="site-footer__description">{{ t.footer.about }}</p>
+        <div class="mt-5 flex gap-2">
+          @for (social of socials; track social.name) {
+            <a
+              class="site-footer__social"
+              [href]="social.url"
+              target="_blank"
+              rel="noopener"
+              [attr.aria-label]="social.name"
+            >
+              <app-icon [name]="social.name" [size]="18" />
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <nav [attr.aria-label]="t.footer.navTitle">
+        <h2 class="site-footer__heading">{{ t.footer.navTitle }}</h2>
+        <ul class="site-footer__links">
+          @for (item of menuItems; track item.id) {
+            <li>
+              <a
+                [routerLink]="i18n.link(item.id)"
+                [attr.data-testid]="'footer-nav-link-' + item.id"
+              >
+                {{ t.nav[item.id] }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <!-- Services -->
+      <nav [attr.aria-label]="t.footer.servicesTitle">
+        <h2 class="site-footer__heading">{{ t.footer.servicesTitle }}</h2>
+        <ul class="site-footer__links">
+          @for (id of services; track id) {
+            <li>
+              <a
+                [routerLink]="i18n.link('service', id)"
+                [attr.data-testid]="'footer-service-link-' + id"
+              >
+                {{ t.services[id].name }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <!-- Contact -->
+      <div>
+        <h2 class="site-footer__heading">{{ t.footer.contactsTitle }}</h2>
+        <address class="site-footer__contact">
+          <p><app-icon name="pin" [size]="18" />{{ address.street }}, {{ address.city }}</p>
+          <a [href]="phoneHref" class="font-bold text-white" data-testid="footer-phone">
+            <app-icon name="phone" [size]="18" />{{ phone }}
+          </a>
+          <a [href]="emailHref" data-testid="footer-email"
+            ><app-icon name="mail" [size]="18" />{{ email }}</a
+          >
+          <div><app-icon name="clock" [size]="18" /><app-opening-hours /></div>
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="site-footer__bottom-inner container-site">
+      <p data-testid="footer-copyright">© {{ year }} {{ siteName }}. {{ t.footer.rights }}</p>
+      <p class="hidden md:block">{{ t.footer.legal }}</p>
+      <button
+        type="button"
+        class="site-footer__to-top"
+        [attr.aria-label]="t.common.backToTop"
+        [title]="t.common.backToTop"
+        data-testid="footer-back-to-top"
+        (click)="scrollToTop()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
+      </button>
+    </div>
+  </div>
+</footer>

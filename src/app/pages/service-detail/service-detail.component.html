@@ -1,0 +1,98 @@
+@let t = i18n.t();
+@let s = content();
+<app-page-header
+  [title]="s.h1"
+  [crumb]="s.name"
+  [subtitle]="s.intro"
+  [parent]="{ label: t.nav.services, link: i18n.link('services') }"
+>
+  <div class="mt-8 flex flex-wrap items-center gap-3">
+    <span
+      class="rounded-full border border-brand-600/50 bg-brand-600/10 px-4 py-2 text-sm text-white"
+    >
+      {{ t.common.from }} <strong class="font-display">{{ i18n.money(s.priceFrom) }}</strong>
+    </span>
+    <span
+      class="flex items-center gap-2 rounded-full border border-ink-700 px-4 py-2 text-sm text-ink-300"
+    >
+      <app-icon name="clock" [size]="16" class="text-brand-500" />{{ t.common.duration }}:
+      {{ s.duration }}
+    </span>
+    <a [routerLink]="[]" fragment="booking" class="btn btn-primary !min-h-[42px]">{{
+      t.common.bookNow
+    }}</a>
+  </div>
+</app-page-header>
+
+<section class="pb-16 sm:pb-24">
+  <div class="container-site grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+    <div class="prose-site text-base leading-relaxed text-ink-300 sm:text-lg">
+      @for (p of s.body; track $index) {
+        <p>{{ p }}</p>
+      }
+      @if (showTint()) {
+        <div class="card mt-10 p-5 sm:p-8">
+          <h2 class="font-display text-lg font-bold sm:text-xl">{{ t.home.tintTitle }}</h2>
+          <app-tint-picker class="mt-4 block" />
+        </div>
+      }
+    </div>
+
+    <aside class="lg:sticky lg:top-28 lg:self-start">
+      <div class="card p-6 sm:p-8">
+        <h2 class="font-display text-xl font-bold">{{ t.service.benefitsTitle }}</h2>
+        <ul class="mt-5 space-y-3.5">
+          @for (b of s.benefits; track b) {
+            <li class="flex gap-3 text-sm leading-relaxed text-ink-300">
+              <span
+                class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-600 text-white"
+              >
+                <app-icon name="check" [size]="12" [stroke]="3" />
+              </span>
+              {{ b }}
+            </li>
+          }
+        </ul>
+        <p class="mt-6 border-t border-ink-700 pt-5 text-xs text-ink-400">
+          {{ t.service.priceNote }}
+        </p>
+        <a [routerLink]="i18n.link('prices')" class="btn btn-ghost mt-5 w-full">
+          <app-icon name="calc" [size]="18" />{{ t.common.calcPrice }}
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+@if (s.faq.length) {
+  <section class="section border-t border-ink-800">
+    <div class="container-site max-w-4xl">
+      <h2 class="h2 mt-0">{{ t.service.faqTitle }}</h2>
+      <app-faq-list class="mt-8" [items]="s.faq" />
+    </div>
+  </section>
+}
+
+<section class="section border-t border-ink-800 bg-ink-900/50" id="booking">
+  <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.5fr]">
+    <div>
+      <p class="eyebrow">{{ s.name }}</p>
+      <h2 class="h2">{{ t.booking.title }}</h2>
+      <p class="lead">{{ t.booking.text }}</p>
+    </div>
+    <div class="card p-6 sm:p-8">
+      <app-booking-form [service]="service()" />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-site">
+    <h2 class="h2 mt-0">{{ t.service.otherTitle }}</h2>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      @for (id of others(); track id) {
+        <app-service-card [service]="id" />
+      }
+    </div>
+  </div>
+</section>

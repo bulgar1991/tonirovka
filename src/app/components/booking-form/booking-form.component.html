@@ -1,0 +1,107 @@
+@let t = i18n.t();
+@let b = t.booking;
+<form
+  class="grid gap-4 sm:grid-cols-2"
+  novalidate
+  (submit)="$event.preventDefault(); send('whatsapp')"
+>
+  <label class="block">
+    <span class="label">{{ b.name }} <span class="text-brand-400">*</span></span>
+    <input
+      class="field"
+      type="text"
+      name="name"
+      autocomplete="name"
+      required
+      [value]="name()"
+      (input)="name.set(value($event))"
+      [attr.aria-invalid]="submitted() && !nameValid()"
+    />
+  </label>
+  <label class="block">
+    <span class="label">{{ b.phone }} <span class="text-brand-400">*</span></span>
+    <input
+      class="field"
+      type="tel"
+      name="phone"
+      autocomplete="tel"
+      inputmode="tel"
+      required
+      [value]="phone()"
+      (input)="phone.set(value($event))"
+      [attr.aria-invalid]="submitted() && !phoneValid()"
+    />
+  </label>
+  <label class="block">
+    <span class="label">{{ b.car }}</span>
+    <input
+      class="field"
+      type="text"
+      name="car"
+      [placeholder]="b.carPlaceholder"
+      [value]="car()"
+      (input)="car.set(value($event))"
+    />
+  </label>
+  <label class="block">
+    <span class="label">{{ b.service }}</span>
+    <select class="field" name="service" (change)="selected.set($any(value($event)))">
+      <option value="" [selected]="!selected()">—</option>
+      @for (id of services; track id) {
+        <option [value]="id" [selected]="selected() === id">{{ t.services[id].name }}</option>
+      }
+    </select>
+  </label>
+  <label class="block">
+    <span class="label">{{ b.date }}</span>
+    <input
+      class="field [color-scheme:dark]"
+      type="date"
+      name="date"
+      [min]="today"
+      [value]="date()"
+      (input)="date.set(value($event))"
+    />
+  </label>
+  <label class="block">
+    <span class="label">{{ b.comment }}</span>
+    <input
+      class="field"
+      type="text"
+      name="comment"
+      [value]="comment()"
+      (input)="comment.set(value($event))"
+    />
+  </label>
+
+  @if (note()) {
+    <p
+      class="rounded-xl border border-brand-600/40 bg-brand-600/10 px-4 py-3 text-sm text-white sm:col-span-2"
+    >
+      {{ note() }}
+    </p>
+  }
+
+  <div class="flex flex-col gap-3 pt-2 sm:col-span-2 sm:flex-row">
+    <button type="submit" class="btn btn-primary flex-1">
+      <app-icon name="chat" [size]="18" />{{ b.sendWhatsapp }}
+    </button>
+    <button type="button" class="btn btn-ghost flex-1" (click)="send('telegram')">
+      <app-icon name="send" [size]="18" />{{ b.sendTelegram }}
+    </button>
+  </div>
+
+  <p
+    class="text-sm sm:col-span-2"
+    aria-live="polite"
+    [class]="submitted() && !valid() ? 'text-brand-400' : 'text-ink-400'"
+  >
+    @if (submitted() && !valid()) {
+      {{ b.required }}
+    } @else if (copied()) {
+      {{ b.copied }}
+    } @else {
+      {{ b.note }}
+    }
+  </p>
+</form>

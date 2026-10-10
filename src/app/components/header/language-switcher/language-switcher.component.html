@@ -1,0 +1,64 @@
+@if (variant() === 'dropdown') {
+  <div class="language-switcher language-switcher--dropdown">
+    <button
+      type="button"
+      class="language-switcher__toggle"
+      [attr.aria-expanded]="open()"
+      aria-haspopup="true"
+      [attr.aria-label]="i18n.t().common.language"
+      data-testid="language-switcher-toggle"
+      (click)="toggle()"
+    >
+      {{ currentLanguage().label }}
+      <svg
+        class="language-switcher__chevron"
+        [class.language-switcher__chevron--open]="open()"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    </button>
+
+    <ul class="language-switcher__menu" [class.language-switcher__menu--open]="open()">
+      @for (lang of languages; track lang.code) {
+        <li>
+          <a
+            class="language-switcher__option"
+            [class.language-switcher__option--active]="lang.code === i18n.lang()"
+            [routerLink]="i18n.linkIn(lang.code)"
+            [attr.hreflang]="lang.code"
+            [attr.lang]="lang.code"
+            [attr.aria-current]="lang.code === i18n.lang() ? 'true' : null"
+            [attr.data-testid]="'language-option-' + lang.code"
+            (click)="open.set(false)"
+          >
+            <span class="language-switcher__code">{{ lang.label }}</span>
+            {{ lang.name }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+} @else {
+  <div
+    class="language-switcher language-switcher--inline"
+    role="group"
+    [attr.aria-label]="i18n.t().common.language"
+  >
+    @for (lang of languages; track lang.code) {
+      <a
+        class="language-switcher__pill"
+        [class.language-switcher__pill--active]="lang.code === i18n.lang()"
+        [routerLink]="i18n.linkIn(lang.code)"
+        [attr.hreflang]="lang.code"
+        [attr.lang]="lang.code"
+        [attr.aria-current]="lang.code === i18n.lang() ? 'true' : null"
+        [title]="lang.name"
+        [attr.data-testid]="'language-option-' + lang.code"
+      >
+        {{ lang.label }}
+      </a>
+    }
+  </div>
+}

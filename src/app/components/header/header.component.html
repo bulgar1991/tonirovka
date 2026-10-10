@@ -1,0 +1,126 @@
+@let t = i18n.t();
+<header
+  data-testid="site-header"
+  class="fixed inset-x-0 top-0 z-50 border-b transition-all duration-500"
+  [class]="
+    scrolled()
+      ? 'border-white/5 bg-ink-950/85 shadow-[0_10px_40px_-20px_rgba(225,29,42,0.5)] backdrop-blur-xl'
+      : 'border-transparent'
+  "
+>
+  <nav class="container-site flex h-16 items-center justify-between gap-4 lg:h-20">
+    <a
+      class="site-logo"
+      [routerLink]="i18n.link('home')"
+      [attr.aria-label]="siteName"
+      data-testid="header-logo"
+    >
+      <app-logo />
+    </a>
+
+    <ul class="hidden items-center gap-1 lg:flex">
+      @for (link of links; track link.id) {
+        <li>
+          <a
+            class="nav-link"
+            routerLinkActive="nav-link--active"
+            [routerLinkActiveOptions]="{ exact: link.id === 'home' }"
+            ariaCurrentWhenActive="page"
+            [routerLink]="i18n.link(link.id)"
+            [attr.data-testid]="'nav-link-' + link.id"
+          >
+            {{ t.nav[link.id] }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="flex items-center gap-2">
+      <app-language-switcher class="hidden sm:block" />
+      <a class="header-phone" [href]="phoneHref" data-testid="header-phone">
+        <app-icon name="phone" [size]="16" />{{ phone }}
+      </a>
+      <a
+        class="btn btn-primary hidden !min-h-[42px] !px-5 md:inline-flex"
+        [routerLink]="i18n.link('contacts')"
+        fragment="booking"
+        >{{ t.nav.book }}</a
+      >
+      <button
+        type="button"
+        class="burger"
+        [attr.aria-label]="t.nav.menu"
+        [attr.aria-expanded]="sidebarOpen()"
+        aria-controls="mobile-sidebar"
+        data-testid="mobile-menu-open"
+        (click)="openSidebar()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile sidebar (opened by the burger), outside <header> so it isn't inside its stacking box. -->
+@if (sidebarOpen()) {
+  <div class="sidebar-overlay" (click)="closeSidebar()" aria-hidden="true"></div>
+  <div
+    id="mobile-sidebar"
+    class="sidebar"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="t.nav.menu"
+    data-testid="mobile-menu"
+  >
+    <div class="sidebar__header">
+      <a [routerLink]="i18n.link('home')" (click)="closeSidebar()" [attr.aria-label]="siteName">
+        <app-logo />
+      </a>
+      <button
+        type="button"
+        class="sidebar__close"
+        [attr.aria-label]="t.nav.close"
+        data-testid="mobile-menu-close"
+        (click)="closeSidebar()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </div>
+
+    <nav class="sidebar__nav" [attr.aria-label]="t.nav.menu" data-testid="mobile-navigation">
+      @for (link of links; track link.id) {
+        <a
+          class="sidebar__link"
+          [routerLink]="i18n.link(link.id)"
+          routerLinkActive="sidebar__link--active"
+          [routerLinkActiveOptions]="{ exact: link.id === 'home' }"
+          ariaCurrentWhenActive="page"
+          [attr.data-testid]="'mobile-nav-link-' + link.id"
+          (click)="closeSidebar()"
+        >
+          {{ t.nav[link.id] }}
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+        </a>
+      }
+    </nav>
+
+    <div class="sidebar__footer">
+      <a class="sidebar__phone" [href]="phoneHref" data-testid="mobile-menu-phone">
+        <app-icon name="phone" />
+        {{ phone }}
+      </a>
+      <app-language-switcher variant="inline" (click)="closeSidebar()" />
+      <a
+        class="btn btn-primary sidebar__cta"
+        [routerLink]="i18n.link('contacts')"
+        fragment="booking"
+        data-testid="mobile-menu-contact"
+        (click)="closeSidebar()"
+      >
+        {{ t.nav.book }}
+      </a>
+    </div>
+  </div>
+}

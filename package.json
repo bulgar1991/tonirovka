@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && node scripts/postbuild.mjs",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint --fix",
     "prettier": "npx prettier --write .",
@@ -65,6 +65,7 @@
     "@vitest/ui": "^5.0.3",
     "angular-eslint": "^22.5.0",
     "autoprefixer": "^10.5.5",
+    "esbuild": "^0.28.2",
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",

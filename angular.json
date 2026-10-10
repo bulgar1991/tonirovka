@@ -4,7 +4,9 @@
   "cli": {
     "packageManager": "npm",
     "analytics": false,
-    "schematicCollections": ["@angular-eslint/schematics"],
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ],
     "cache": {
       "enabled": false
     }
@@ -54,20 +56,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              },
               "src/favicon.ico",
               "src/site.webmanifest",
-              "src/robots.txt",
-              "src/sitemap.xml",
               "src/assets"
             ],
-            "preserveSymlinks": true,
             "styles": [
-              "node_modules/swiper/swiper.css",
-              "node_modules/swiper/modules/navigation.css",
               "src/styles.scss"
             ]
           },
@@ -76,13 +69,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "4mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "20kb",
-                  "maximumError": "40kb"
+                  "maximumWarning": "8kb",
+                  "maximumError": "16kb"
                 }
               ],
               "outputHashing": "all"
@@ -129,7 +122,10 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
