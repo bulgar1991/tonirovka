@@ -27,6 +27,7 @@ export const RO: Dict = {
     writeUs: 'Scrie-ne',
     backToTop: 'Sus',
     breadcrumb: 'Navigare',
+    tagline: 'Studio de tonare auto',
     home: 'Acasă',
   },
   days: { Mo: 'Lun', Tu: 'Mar', We: 'Mie', Th: 'Joi', Fr: 'Vin', Sa: 'Sâm', Su: 'Dum' },

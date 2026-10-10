@@ -27,6 +27,7 @@ export const EN: Dict = {
     writeUs: 'Message us',
     backToTop: 'Back to top',
     breadcrumb: 'Breadcrumb',
+    tagline: 'Car tint studio',
     home: 'Home',
   },
   days: { Mo: 'Mon', Tu: 'Tue', We: 'Wed', Th: 'Thu', Fr: 'Fri', Sa: 'Sat', Su: 'Sun' },

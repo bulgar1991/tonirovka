@@ -27,6 +27,7 @@ export const RU: Dict = {
     writeUs: 'Написать нам',
     backToTop: 'Наверх',
     breadcrumb: 'Навигационная цепочка',
+    tagline: 'Студия тонировки авто',
     home: 'Главная',
   },
   days: { Mo: 'Пн', Tu: 'Вт', We: 'Ср', Th: 'Чт', Fr: 'Пт', Sa: 'Сб', Su: 'Вс' },

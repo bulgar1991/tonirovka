@@ -56,7 +56,7 @@ function bootContent(ref: PageRef): string {
   const links = (['home', 'services', 'prices', 'gallery', 'faq', 'contacts'] as const)
     .map((p) => `<a href="${pathFor(ref.lang, p)}">${esc(t.nav[p])}</a>`)
     .join('');
-  return `<div class="boot" role="status"><p class="boot__logo">Tonirovka<b>.md</b></p><h1>${esc(h1)}</h1><p>${esc(intro)}</p><nav>${links}</nav><span class="boot__spinner" aria-hidden="true"></span></div>`;
+  return `<div class="boot" role="status"><p class="boot__logo">TONIROVKA<b>.MD</b></p><h1>${esc(h1)}</h1><p>${esc(intro)}</p><nav>${links}</nav><span class="boot__spinner" aria-hidden="true"></span></div>`;
 }
 
 function render(ref: PageRef): string {

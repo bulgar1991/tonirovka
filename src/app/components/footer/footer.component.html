@@ -5,7 +5,7 @@
       <!-- About -->
       <div>
         <a [routerLink]="i18n.link('home')" [attr.aria-label]="siteName" data-testid="footer-logo">
-          <app-logo />
+          <app-logo [tagline]="true" />
         </a>
         <p class="site-footer__description">{{ t.footer.about }}</p>
         <div class="mt-5 flex gap-2">

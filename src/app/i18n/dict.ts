@@ -37,6 +37,7 @@ export interface Dict {
     home: string;
     backToTop: string;
     breadcrumb: string;
+    tagline: string;
   };
   days: Record<'Mo' | 'Tu' | 'We' | 'Th' | 'Fr' | 'Sa' | 'Su', string>;
   seo: Record<Exclude<PageKey, 'service'> | 'notFound', Seo>;
