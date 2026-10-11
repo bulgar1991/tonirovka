@@ -16,7 +16,7 @@ import { LanguageService } from '@services/language.service';
     @let g = t.gallery;
     <app-page-header [title]="g.h1" [crumb]="t.nav.gallery" [subtitle]="g.intro" />
 
-    <section class="pb-16 sm:pb-24">
+    <section class="mt-12 sm:mt-16">
       <div class="container-site">
         <h2 class="h2 mt-0">{{ g.levelsTitle }}</h2>
         <p class="lead">{{ g.levelsText }}</p>
@@ -36,7 +36,7 @@ import { LanguageService } from '@services/language.service';
       </div>
     </section>
 
-    <section class="section border-t border-ink-800">
+    <section class="section">
       <div class="container-site">
         <h2 class="h2 mt-0">{{ g.worksTitle }}</h2>
         @if (works.length) {

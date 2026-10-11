@@ -1,25 +1,25 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FILM_IDS } from '@/config/pricing';
+import { FILM_IDS, POPULAR_FILM } from '@/config/films';
 import { LanguageService } from '@services/language.service';
 
-/** Standard / Carbon / Ceramic comparison: cards on phones, a table from `md` up. */
+/** Standard / Ceramic film comparison cards, side by side from `md` up. */
 @Component({
   selector: 'app-films-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },
   template: `
     @let t = i18n.t();
-    <div class="grid gap-4 md:grid-cols-3">
+    <div class="grid max-w-4xl gap-4 md:grid-cols-2">
       @for (film of films; track film; let i = $index) {
         <div
           class="relative rounded-2xl border p-6 sm:p-7"
           [class]="
-            film === 'carbon'
+            film === popular
               ? 'border-brand-600 bg-gradient-to-b from-brand-600/15 to-ink-900'
               : 'border-ink-700 bg-ink-900/80'
           "
         >
-          @if (film === 'carbon') {
+          @if (film === popular) {
             <span
               class="absolute -top-3 left-6 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white"
               >{{ t.films.popular }}</span
@@ -56,4 +56,5 @@ import { LanguageService } from '@services/language.service';
 export class FilmsTableComponent {
   protected readonly i18n = inject(LanguageService);
   protected readonly films = FILM_IDS;
+  protected readonly popular = POPULAR_FILM;
 }

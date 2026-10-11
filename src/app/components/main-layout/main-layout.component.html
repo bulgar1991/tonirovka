@@ -1,6 +1,10 @@
-<a class="skip-link" href="#main-content" data-testid="skip-to-content">{{
-  i18n.t().common.skipToContent
-}}</a>
+<a
+  class="skip-link"
+  href="#main-content"
+  data-testid="skip-to-content"
+  (click)="skipToContent($event)"
+  >{{ i18n.t().common.skipToContent }}</a
+>
 <app-header />
 <main id="main-content" class="site-main" tabindex="-1" data-testid="main-content">
   <router-outlet />

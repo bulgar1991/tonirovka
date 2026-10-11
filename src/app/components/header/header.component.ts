@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ScrollToDirective } from '@directives/scroll-to.directive';
 import { IconComponent } from '@components/icon/icon.component';
 import { LogoComponent } from '@components/logo/logo.component';
 import { CONTACT_PHONE, CONTACT_PHONE_HREF } from '@/config/contact';
@@ -13,7 +14,14 @@ import { MENU_ITEMS } from './menu-items';
 const DESKTOP_MIN_WIDTH = 1024;
 
 @Component({
-  imports: [RouterLink, RouterLinkActive, IconComponent, LogoComponent, LanguageSwitcherComponent],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    ScrollToDirective,
+    IconComponent,
+    LogoComponent,
+    LanguageSwitcherComponent,
+  ],
   selector: 'app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './header.component.scss',

@@ -15,7 +15,7 @@
       [attr.aria-label]="siteName"
       data-testid="header-logo"
     >
-      <app-logo />
+      <app-logo [tagline]="true" />
     </a>
 
     <ul class="hidden items-center gap-1 lg:flex">
@@ -42,8 +42,8 @@
       </a>
       <a
         class="btn btn-primary hidden !min-h-[42px] !px-5 md:inline-flex"
-        [routerLink]="i18n.link('contacts')"
-        fragment="booking"
+        appScrollTo="booking"
+        [page]="i18n.link('contacts')"
         >{{ t.nav.book }}</a
       >
       <button
@@ -114,10 +114,10 @@
       <app-language-switcher variant="inline" (click)="closeSidebar()" />
       <a
         class="btn btn-primary sidebar__cta"
-        [routerLink]="i18n.link('contacts')"
-        fragment="booking"
+        appScrollTo="booking"
+        [page]="i18n.link('contacts')"
         data-testid="mobile-menu-contact"
-        (click)="closeSidebar()"
+        (navigate)="closeSidebar()"
       >
         {{ t.nav.book }}
       </a>

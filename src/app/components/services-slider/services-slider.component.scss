@@ -1,0 +1,6 @@
+// Swiper's core layout styles, loaded only with the slider (encapsulation is off for them).
+@use 'swiper/css';
+
+app-services-slider .swiper-slide {
+  height: auto;
+}

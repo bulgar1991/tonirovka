@@ -12,7 +12,7 @@ import {
   TELEGRAM_URL,
   WHATSAPP_URL,
 } from '@/config/contact';
-import { BUSINESS } from '@/config/site';
+import { BUSINESS, MAP_EMBED_URL, MAP_URL } from '@/config/site';
 import { LanguageService } from '@services/language.service';
 
 @Component({
@@ -31,8 +31,6 @@ export class ContactComponent {
   emailHref = CONTACT_EMAIL_HREF;
   whatsappUrl = WHATSAPP_URL;
   telegramUrl = TELEGRAM_URL;
-  mapLink = `https://www.google.com/maps/search/?api=1&query=${BUSINESS.geo.lat},${BUSINESS.geo.lng}`;
-  mapEmbed = inject(DomSanitizer).bypassSecurityTrustResourceUrl(
-    `https://www.google.com/maps?q=${BUSINESS.geo.lat},${BUSINESS.geo.lng}&z=16&output=embed`,
-  );
+  mapLink = MAP_URL;
+  mapEmbed = inject(DomSanitizer).bypassSecurityTrustResourceUrl(MAP_EMBED_URL);
 }

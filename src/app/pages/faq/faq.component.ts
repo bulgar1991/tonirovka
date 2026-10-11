@@ -11,7 +11,7 @@ import { LanguageService } from '@services/language.service';
   template: `
     @let t = i18n.t();
     <app-page-header [title]="t.faq.h1" [crumb]="t.nav.faq" [subtitle]="t.faq.intro" />
-    <section class="pb-8">
+    <section class="mt-12 sm:mt-16">
       <div class="container-site max-w-4xl">
         <app-faq-list [items]="t.faq.items" />
       </div>

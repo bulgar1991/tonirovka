@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ScrollToDirective } from '@directives/scroll-to.directive';
 import { IconComponent } from '@components/icon/icon.component';
 import { CONTACT_PHONE_HREF, WHATSAPP_URL } from '@/config/contact';
 import { LanguageService } from '@services/language.service';
 
 /** Quick actions pinned to the bottom of the screen on phones: call, WhatsApp, booking. */
 @Component({
-  imports: [RouterLink, IconComponent],
+  imports: [ScrollToDirective, IconComponent],
   selector: 'app-mobile-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
@@ -27,8 +27,8 @@ import { LanguageService } from '@services/language.service';
         <app-icon name="chat" [size]="16" />WhatsApp
       </a>
       <a
-        [routerLink]="i18n.link('contacts')"
-        fragment="booking"
+        appScrollTo="booking"
+        [page]="i18n.link('contacts')"
         class="btn btn-primary !min-h-[46px] !px-2 !text-[11px] !tracking-normal"
         >{{ t.nav.book }}</a
       >

@@ -1,4 +1,4 @@
-import { BodyId, FilmId, ZoneId } from '@/config/pricing';
+import { FilmId } from '@/config/films';
 import { PageKey, ServiceId } from '@/config/routes';
 
 export interface Seo {
@@ -15,7 +15,10 @@ export interface ServiceContent {
   body: string[];
   benefits: string[];
   duration: string;
-  priceFrom: number;
+  /** Starting price in euros; null = price on request. */
+  priceFrom: number | null;
+  /** What the price is for, shown after it, e.g. "per panel". */
+  priceUnit?: string;
   faq: { q: string; a: string }[];
 }
 
@@ -23,12 +26,11 @@ export interface Dict {
   langName: string;
   nav: Record<Exclude<PageKey, 'service'>, string> & { book: string; menu: string; close: string };
   common: {
-    currency: string;
     from: string;
+    onRequest: string;
     call: string;
     bookNow: string;
     learnMore: string;
-    calcPrice: string;
     allServices: string;
     duration: string;
     skipToContent: string;
@@ -37,6 +39,7 @@ export interface Dict {
     home: string;
     backToTop: string;
     breadcrumb: string;
+    tagline: string;
   };
   days: Record<'Mo' | 'Tu' | 'We' | 'Th' | 'Fr' | 'Sa' | 'Su', string>;
   seo: Record<Exclude<PageKey, 'service'> | 'notFound', Seo>;
@@ -60,8 +63,6 @@ export interface Dict {
     filmsTitle: string;
     filmsText: string;
     faqTitle: string;
-    ctaTitle: string;
-    ctaText: string;
   };
   tint: {
     label: string;
@@ -71,26 +72,20 @@ export interface Dict {
   films: {
     names: Record<FilmId, string>;
     texts: Record<FilmId, string>;
-    rows: { label: string; values: [string, string, string] }[];
+    rows: { label: string; values: [string, string] }[];
     popular: string;
   };
   services: Record<ServiceId, ServiceContent>;
   servicesPage: { h1: string; intro: string };
-  service: { benefitsTitle: string; faqTitle: string; otherTitle: string; priceNote: string };
-  prices: {
-    h1: string;
-    intro: string;
-    calcTitle: string;
-    body: string;
-    film: string;
-    zones: string;
-    bodies: Record<BodyId, string>;
-    zoneNames: Record<ZoneId, string>;
-    total: string;
-    note: string;
-    tableTitle: string;
-    book: string;
-    message: string;
+  service: {
+    benefitsTitle: string;
+    faqTitle: string;
+    otherTitle: string;
+    priceNote: string;
+    galleryTitle: string;
+    photo: string;
+    prev: string;
+    next: string;
   };
   gallery: {
     h1: string;

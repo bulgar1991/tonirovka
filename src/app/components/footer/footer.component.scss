@@ -3,7 +3,7 @@
 }
 
 .site-footer {
-  @apply relative border-t border-ink-800 bg-ink-950 pt-16;
+  @apply relative mt-16 border-t border-ink-800 bg-ink-950 pt-16 sm:mt-24;
 
   // Thin red line across the top.
   &::before {
