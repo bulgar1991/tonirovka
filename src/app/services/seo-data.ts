@@ -147,11 +147,13 @@ function buildJsonLd(ref: PageRef, url: string): JsonLd {
           name: s.name,
           url: absoluteUrl(pathFor(ref.lang, 'service', id as never)),
         },
-        priceSpecification: {
-          '@type': 'PriceSpecification',
-          minPrice: s.priceFrom,
-          priceCurrency: BUSINESS.currency,
-        },
+        ...(s.priceFrom !== null && {
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            minPrice: s.priceFrom,
+            priceCurrency: BUSINESS.currency,
+          },
+        }),
       })),
     },
   };
@@ -198,7 +200,9 @@ function buildJsonLd(ref: PageRef, url: string): JsonLd {
       url,
       provider: { '@id': businessId },
       areaServed: BUSINESS.address.city,
-      offers: { '@type': 'Offer', price: s.priceFrom, priceCurrency: BUSINESS.currency },
+      ...(s.priceFrom !== null && {
+        offers: { '@type': 'Offer', price: s.priceFrom, priceCurrency: BUSINESS.currency },
+      }),
     });
     faq = s.faq;
   } else if (ref.page === 'faq') {

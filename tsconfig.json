@@ -20,6 +20,7 @@
       "@guards/*": ["./src/app/guards/*"],
       "@resolvers/*": ["./src/app/resolvers/*"],
       "@models/*": ["./src/app/models/*"],
+      "@directives/*": ["./src/app/directives/*"],
       "@/*": ["./src/app/*"]
     }
   },

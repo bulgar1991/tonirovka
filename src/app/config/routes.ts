@@ -5,15 +5,27 @@ export const DEFAULT_LANG: Lang = 'ro';
 // Open Graph locale per site language.
 export const OG_LOCALES: Record<Lang, string> = { ro: 'ro_MD', ru: 'ru_RU', en: 'en_US' };
 
-export type PageKey = 'home' | 'services' | 'service' | 'prices' | 'gallery' | 'faq' | 'contacts';
+export type PageKey = 'home' | 'services' | 'service' | 'gallery' | 'faq' | 'contacts';
 
-export const SERVICE_IDS = ['tinting', 'athermal', 'lights', 'strip', 'removal'] as const;
+export const SERVICE_IDS = [
+  'tinting',
+  'buildings',
+  'headlights',
+  'wrap',
+  'polishing',
+  'cleaning',
+  'dryFog',
+  'headliner',
+  'ambient',
+  'starlight',
+  'aircon',
+  'evaMats',
+] as const;
 export type ServiceId = (typeof SERVICE_IDS)[number];
 
 // Localized URL slugs: Romanian (default) has no prefix, other languages live under /ru and /en.
 export const PAGE_SLUGS: Record<Exclude<PageKey, 'home' | 'service'>, Record<Lang, string>> = {
   services: { ro: 'servicii', ru: 'uslugi', en: 'services' },
-  prices: { ro: 'preturi', ru: 'ceny', en: 'prices' },
   gallery: { ro: 'galerie', ru: 'galereya', en: 'gallery' },
   faq: { ro: 'intrebari-frecvente', ru: 'voprosy', en: 'faq' },
   contacts: { ro: 'contacte', ru: 'kontakty', en: 'contact' },
@@ -21,10 +33,17 @@ export const PAGE_SLUGS: Record<Exclude<PageKey, 'home' | 'service'>, Record<Lan
 
 export const SERVICE_SLUGS: Record<ServiceId, Record<Lang, string>> = {
   tinting: { ro: 'tonare-geamuri-auto', ru: 'tonirovka-stekol', en: 'car-window-tinting' },
-  athermal: { ro: 'folie-atermica', ru: 'atermalnaya-plenka', en: 'heat-rejection-film' },
-  lights: { ro: 'tonare-faruri-stopuri', ru: 'tonirovka-far', en: 'headlight-tinting' },
-  strip: { ro: 'banda-parasolar', ru: 'polosa-na-lobovoe', en: 'windshield-sun-strip' },
-  removal: { ro: 'detonare', ru: 'snyatie-tonirovki', en: 'tint-removal' },
+  buildings: { ro: 'tonare-fatade-cladiri', ru: 'tonirovka-fasadov', en: 'building-window-film' },
+  headlights: { ro: 'folie-faruri', ru: 'okleyka-far', en: 'headlight-film' },
+  wrap: { ro: 'colantare-caroserie', ru: 'okleyka-kuzova', en: 'car-wrapping' },
+  polishing: { ro: 'polish-caroserie', ru: 'polirovka-kuzova', en: 'car-polishing' },
+  cleaning: { ro: 'curatare-interior', ru: 'himchistka-salona', en: 'interior-cleaning' },
+  dryFog: { ro: 'ceata-uscata', ru: 'suhoy-tuman', en: 'dry-fog' },
+  headliner: { ro: 'retapitare-plafon', ru: 'peretyazhka-potolka', en: 'headliner-upholstery' },
+  ambient: { ro: 'iluminare-ambientala', ru: 'ambientnaya-podsvetka', en: 'ambient-lighting' },
+  starlight: { ro: 'cer-instelat', ru: 'zvezdnoe-nebo', en: 'starlight-headliner' },
+  aircon: { ro: 'incarcare-aer-conditionat', ru: 'zapravka-kondicionera', en: 'ac-recharge' },
+  evaMats: { ro: 'covorase-eva', ru: 'eva-kovriki', en: 'eva-floor-mats' },
 };
 
 export interface PageRef {
@@ -61,7 +80,7 @@ export function findServiceBySlug(
 export function allPages(): { path: string; ref: PageRef }[] {
   const pages: { path: string; ref: PageRef }[] = [];
   for (const lang of LANGS) {
-    for (const page of ['home', 'services', 'prices', 'gallery', 'faq', 'contacts'] as const) {
+    for (const page of ['home', 'services', 'gallery', 'faq', 'contacts'] as const) {
       pages.push({ path: pathFor(lang, page), ref: { lang, page } });
     }
     for (const serviceId of SERVICE_IDS) {

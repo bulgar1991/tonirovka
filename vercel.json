@@ -4,6 +4,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/frontend/browser",
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/preturi", "destination": "/servicii", "permanent": true },
+    { "source": "/ru/ceny", "destination": "/ru/uslugi", "permanent": true },
+    { "source": "/en/prices", "destination": "/en/services", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)\\.(js|css|woff2|png|svg|ico)",

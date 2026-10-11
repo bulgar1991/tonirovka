@@ -2,7 +2,7 @@
 @let h = t.home;
 
 <!-- Hero -->
-<section class="relative overflow-hidden pb-16 pt-28 sm:pt-36 lg:pb-24">
+<section class="relative overflow-hidden pt-28 sm:pt-36">
   <div class="red-glow pointer-events-none absolute inset-0"></div>
   <div class="grid-lines pointer-events-none absolute inset-0"></div>
 
@@ -24,11 +24,11 @@
         {{ h.text }}
       </p>
       <div class="mt-8 flex animate-fade-up flex-col gap-3 [animation-delay:240ms] sm:flex-row">
-        <a [routerLink]="i18n.link('contacts')" fragment="booking" class="btn btn-primary">
+        <a appScrollTo="booking" [page]="i18n.link('contacts')" class="btn btn-primary">
           {{ h.ctaPrimary }}<app-icon name="arrow" [size]="16" />
         </a>
-        <a [routerLink]="i18n.link('prices')" class="btn btn-ghost">
-          <app-icon name="calc" [size]="18" />{{ h.ctaSecondary }}
+        <a [routerLink]="i18n.link('services')" class="btn btn-ghost">
+          <app-icon name="layers" [size]="18" />{{ h.ctaSecondary }}
         </a>
       </div>
       <dl
@@ -55,7 +55,7 @@
 </section>
 
 <!-- Services -->
-<section class="section border-t border-ink-800" id="services">
+<section class="section overflow-hidden" id="services">
   <div class="container-site">
     <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
       <div>
@@ -67,32 +67,12 @@
         {{ t.common.allServices }}<app-icon name="arrow" [size]="16" />
       </a>
     </div>
-    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      @for (id of services; track id) {
-        <app-service-card [service]="id" />
-      }
-      <a
-        [routerLink]="i18n.link('prices')"
-        class="group flex flex-col justify-between rounded-2xl bg-brand-600 p-6 text-white transition hover:bg-brand-500 sm:p-7"
-      >
-        <app-icon name="calc" [size]="32" />
-        <div>
-          <h3 class="mt-8 text-xl font-bold">{{ t.prices.calcTitle }}</h3>
-          <p class="mt-2 text-sm text-white/80">{{ t.prices.intro }}</p>
-          <span
-            class="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider"
-          >
-            {{ t.common.calcPrice
-            }}<app-icon name="arrow" [size]="16" class="transition group-hover:translate-x-1" />
-          </span>
-        </div>
-      </a>
-    </div>
+    <app-services-slider class="mt-12" [services]="services" />
   </div>
 </section>
 
 <!-- Why us -->
-<section class="section relative overflow-hidden bg-ink-900/50">
+<section class="section-band relative overflow-hidden bg-ink-900/50">
   <div class="container-site">
     <p class="eyebrow">{{ h.whyTitle }}</p>
     <h2 class="h2 max-w-2xl">{{ h.whyText }}</h2>
@@ -117,7 +97,7 @@
 <!-- Films -->
 <section class="section">
   <div class="container-site">
-    <p class="eyebrow">{{ t.prices.film }}</p>
+    <p class="eyebrow">{{ t.services.tinting.name }}</p>
     <h2 class="h2">{{ h.filmsTitle }}</h2>
     <p class="lead">{{ h.filmsText }}</p>
     <app-films-table class="mt-12" />
@@ -125,7 +105,7 @@
 </section>
 
 <!-- Process -->
-<section class="section border-y border-ink-800 bg-ink-900/50">
+<section class="section-band border-y border-ink-800 bg-ink-900/50">
   <div class="container-site">
     <h2 class="h2 mt-0">{{ h.processTitle }}</h2>
     <ol class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

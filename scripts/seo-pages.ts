@@ -46,14 +46,13 @@ function bootContent(ref: PageRef): string {
           {
             home: [`${t.home.title} ${t.home.titleAccent}`, t.home.text],
             services: [t.servicesPage.h1, t.servicesPage.intro],
-            prices: [t.prices.h1, t.prices.intro],
             gallery: [t.gallery.h1, t.gallery.intro],
             faq: [t.faq.h1, t.faq.intro],
             contacts: [t.contacts.h1, t.contacts.intro],
             notFound: [t.notFound.h1, t.notFound.text],
           } as Record<string, [string, string]>
         )[ref.page];
-  const links = (['home', 'services', 'prices', 'gallery', 'faq', 'contacts'] as const)
+  const links = (['home', 'services', 'gallery', 'faq', 'contacts'] as const)
     .map((p) => `<a href="${pathFor(ref.lang, p)}">${esc(t.nav[p])}</a>`)
     .join('');
   return `<div class="boot" role="status"><p class="boot__logo">TONIROVKA<b>.MD</b></p><h1>${esc(h1)}</h1><p>${esc(intro)}</p><nav>${links}</nav><span class="boot__spinner" aria-hidden="true"></span></div>`;
@@ -89,7 +88,7 @@ const urls = pages.map(({ path, ref }) => {
       `    <xhtml:link rel="alternate" hreflang="${lang}" href="${absoluteUrl(pathFor(lang, page, ref.serviceId))}"/>`,
   ).join('\n');
   const priority =
-    ref.page === 'home' ? '1.0' : ref.page === 'service' || ref.page === 'prices' ? '0.8' : '0.6';
+    ref.page === 'home' ? '1.0' : ref.page === 'service' || ref.page === 'services' ? '0.8' : '0.6';
   return `  <url>\n    <loc>${absoluteUrl(path)}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>${priority}</priority>\n${alternates}\n  </url>`;
 });
 write(

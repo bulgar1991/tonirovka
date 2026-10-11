@@ -1,5 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { DICTS } from '@/i18n';
+import { BUSINESS } from '@/config/site';
 import { DEFAULT_LANG, Lang, PageKey, pathFor, PageRef, ServiceId } from '@/config/routes';
 
 const NUMBER_LOCALES: Record<Lang, string> = { ro: 'ro-RO', ru: 'ru-RU', en: 'en-US' };
@@ -21,8 +22,13 @@ export class LanguageService {
     return pathFor(lang, page === 'notFound' ? 'home' : page, serviceId);
   }
 
+  /** A price in euros in the current language's format: "60 €" (ro, ru) or "€60" (en). */
   money(value: number): string {
-    const formatted = new Intl.NumberFormat(NUMBER_LOCALES[this.lang()]).format(value);
-    return `${formatted} ${this.t().common.currency}`;
+    return new Intl.NumberFormat(NUMBER_LOCALES[this.lang()], {
+      style: 'currency',
+      currency: BUSINESS.currency,
+      currencyDisplay: 'narrowSymbol',
+      maximumFractionDigits: 0,
+    }).format(value);
   }
 }

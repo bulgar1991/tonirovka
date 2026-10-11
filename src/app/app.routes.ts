@@ -39,12 +39,6 @@ function pageRoutes(lang: Lang): Routes {
       data: { lang },
     },
     {
-      path: PAGE_SLUGS.prices[lang],
-      loadComponent: () => import('./pages/prices/prices.component').then((m) => m.PricesComponent),
-      resolve: { seo: seoResolver },
-      data: page('prices'),
-    },
-    {
       path: PAGE_SLUGS.gallery[lang],
       loadComponent: () =>
         import('./pages/gallery/gallery.component').then((m) => m.GalleryComponent),

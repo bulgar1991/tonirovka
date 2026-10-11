@@ -31,7 +31,7 @@ export const BUSINESS = {
     closes: string;
   }[],
   priceRange: '$$',
-  currency: 'MDL',
+  currency: 'EUR',
   foundedYear: 2016,
   carsDone: 3500,
   warrantyYears: 10,

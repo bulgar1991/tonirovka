@@ -15,4 +15,10 @@ import { LanguageService } from '@services/language.service';
 })
 export class MainLayoutComponent {
   protected readonly i18n = inject(LanguageService);
+
+  // Moves focus to the page content without adding "#main-content" to the URL.
+  protected skipToContent(event: Event): void {
+    event.preventDefault();
+    document.getElementById('main-content')?.focus();
+  }
 }

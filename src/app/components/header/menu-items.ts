@@ -4,7 +4,6 @@ import { MenuItem } from '@models/menu-item.model';
 export const MENU_ITEMS: MenuItem[] = [
   { id: 'home' },
   { id: 'services' },
-  { id: 'prices' },
   { id: 'gallery' },
   { id: 'faq' },
   { id: 'contacts' },

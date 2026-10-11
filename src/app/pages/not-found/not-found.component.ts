@@ -10,7 +10,7 @@ import { LanguageService } from '@services/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @let t = i18n.t();
-    <section class="relative overflow-hidden pb-24 pt-32 text-center sm:pt-40">
+    <section class="relative overflow-hidden pt-32 text-center sm:pt-40">
       <div class="red-glow pointer-events-none absolute inset-0"></div>
       <div class="container-site relative">
         <p class="font-display text-[7rem] font-bold leading-none text-brand-600 sm:text-[10rem]">

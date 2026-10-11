@@ -56,8 +56,14 @@
     @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-8;
   }
 
+  // Spacing between blocks is always a top margin, never a bottom one.
   .section {
-    @apply py-16 sm:py-24;
+    @apply mt-16 sm:mt-24;
+  }
+
+  // A section with its own background: the top margin plus padding inside the band.
+  .section-band {
+    @apply mt-16 py-16 sm:mt-24 sm:py-24;
   }
 
   .eyebrow {

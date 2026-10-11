@@ -5,7 +5,6 @@ export const EN: Dict = {
   nav: {
     home: 'Home',
     services: 'Services',
-    prices: 'Prices',
     gallery: 'Gallery',
     faq: 'FAQ',
     contacts: 'Contact',
@@ -14,12 +13,11 @@ export const EN: Dict = {
     close: 'Close menu',
   },
   common: {
-    currency: 'MDL',
     from: 'from',
+    onRequest: 'on request',
     call: 'Call',
     bookNow: 'Book now',
     learnMore: 'Details',
-    calcPrice: 'Get a price',
     allServices: 'All services',
     duration: 'Duration',
     skipToContent: 'Skip to content',
@@ -27,25 +25,20 @@ export const EN: Dict = {
     writeUs: 'Message us',
     backToTop: 'Back to top',
     breadcrumb: 'Breadcrumb',
-    tagline: 'Car tint studio',
+    tagline: 'Car tint & detailing',
     home: 'Home',
   },
   days: { Mo: 'Mon', Tu: 'Tue', We: 'Wed', Th: 'Thu', Fr: 'Fri', Sa: 'Sat', Su: 'Sun' },
   seo: {
     home: {
-      title: 'Car Window Tinting in Chișinău — Premium Film | Tonirovka.md',
+      title: 'Car Tinting & Detailing in Chișinău | Tonirovka.md',
       description:
-        'Car window tinting, heat-rejection film and headlight tinting in Chișinău. Premium carbon and ceramic films, bubble-free install, up to 10-year warranty.',
+        'Window tinting, car wrapping, headlight film, polishing, interior cleaning, starlight headliners and ambient lighting in Chișinău. Up to 10-year warranty.',
     },
     services: {
-      title: 'Car Tinting Services in Chișinău | Tonirovka.md',
+      title: 'Car Tinting & Detailing Services in Chișinău | Tonirovka.md',
       description:
-        'Window tinting, windshield heat-rejection film, headlight and taillight tint, sun strips and tint removal. See all Tonirovka.md services and prices.',
-    },
-    prices: {
-      title: 'Car Tinting Prices — Online Calculator | Tonirovka.md',
-      description:
-        'Estimate your car tint price online: body type, standard, carbon or ceramic film. Transparent pricing with no hidden fees.',
+        'Car and building tinting, wraps, headlight film, polishing, interior cleaning, dry fog, headliners, starlight, ambient lighting, AC recharge and EVA mats.',
     },
     gallery: {
       title: 'Gallery & Window Tint Levels | Tonirovka.md',
@@ -68,20 +61,21 @@ export const EN: Dict = {
     },
   },
   home: {
-    badge: 'Car tinting studio in Chișinău',
+    badge: 'Tinting & detailing in Chișinău',
     title: 'Car window tinting',
     titleAccent: 'without compromise',
-    text: 'Premium carbon and ceramic films installed in a dust-free bay — no bubbles, no specks. Protection from heat, UV and prying eyes, backed by a written warranty.',
+    text: 'Premium films installed in a dust-free bay — no bubbles, no specks. Plus wraps, polishing, interior cleaning and cabin upgrades, all in one studio with a written warranty.',
     ctaPrimary: 'Book now',
-    ctaSecondary: 'Get a price',
+    ctaSecondary: 'All services',
     stats: { years: 'years of experience', cars: 'cars tinted', warranty: 'year warranty' },
     tintTitle: 'Choose your tint level',
     tintText:
       'Move the slider to see how the car looks. The percentage is how much light passes through the glass: the lower it is, the darker the window.',
     servicesTitle: 'What we do',
-    servicesText: 'Everything for your glass and lights in one place, with certified materials.',
+    servicesText:
+      'Tinting, wraps, detailing and cabin upgrades in one place, with certified materials.',
     whyTitle: 'Why Tonirovka.md',
-    whyText: 'We tint every car as if it were our own. Every detail matters.',
+    whyText: 'We treat every car as if it were our own. Every detail matters.',
     why: [
       {
         icon: 'sparkles',
@@ -91,7 +85,7 @@ export const EN: Dict = {
       {
         icon: 'layers',
         title: 'Premium films',
-        text: 'Only certified carbon and ceramic films that never fade or turn purple.',
+        text: 'Only certified films that never fade or turn purple.',
       },
       {
         icon: 'scissors',
@@ -134,8 +128,6 @@ export const EN: Dict = {
     filmsText:
       'Every film blocks 99% of UV rays. The difference is heat rejection, durability and clarity.',
     faqTitle: 'Frequently asked questions',
-    ctaTitle: 'Ready to transform your car?',
-    ctaText: 'Message us now for a free consultation and the nearest available slot.',
   },
   tint: {
     label: 'Visible light transmission (VLT)',
@@ -150,200 +142,349 @@ export const EN: Dict = {
     },
   },
   films: {
-    names: { standard: 'Standard', carbon: 'Carbon', ceramic: 'Ceramic' },
+    names: { standard: 'Standard', ceramic: 'Ceramic' },
     texts: {
       standard: 'Entry-level dyed film for a small budget. Good looks and UV protection.',
-      carbon: 'Deep matte black that never fades. The best value for money.',
       ceramic:
         'Nano-ceramic: maximum heat rejection and perfect clarity, zero signal interference.',
     },
     rows: [
-      { label: 'UV blocking', values: ['99%', '99%', '99%'] },
-      { label: 'Heat rejection', values: ['up to 30%', 'up to 50%', 'up to 70%'] },
-      { label: 'Fade-proof', values: ['—', '✓', '✓'] },
-      { label: 'No GPS/GSM interference', values: ['✓', '✓', '✓'] },
-      { label: 'Warranty', values: ['3 years', '5 years', '10 years'] },
+      { label: 'UV blocking', values: ['99%', '99%'] },
+      { label: 'Heat rejection', values: ['up to 30%', 'up to 70%'] },
+      { label: 'Fade-proof', values: ['—', '✓'] },
+      { label: 'No GPS/GSM interference', values: ['✓', '✓'] },
+      { label: 'Warranty', values: ['3 years', '10 years'] },
     ],
     popular: 'Popular',
   },
   services: {
     tinting: {
-      name: 'Window tinting',
-      short: 'Full or partial tint with carbon or ceramic film at the darkness you want.',
+      name: 'Car window tinting',
+      short: 'Full or partial tint with standard or ceramic film at the darkness you want.',
       seo: {
-        title: 'Car Window Tinting in Chișinău — from 1000 MDL | Tonirovka.md',
+        title: 'Car Window Tinting in Chișinău — from €60 | Tonirovka.md',
         description:
-          'Car window tinting with carbon and ceramic film from 5% to 70%. Dust-free install, no bubbles, up to 10-year warranty. Quick booking.',
+          'Car window tinting with standard and ceramic film from 5% to 70%. Dust-free install, no bubbles, up to 10-year warranty. Quick booking.',
       },
       h1: 'Car window tinting',
       intro:
-        'Window tint shields your interior from the sun, cuts cabin heat and gives you privacy. We install premium films that look flawless for years.',
+        'Tint protects your interior from the sun, keeps the cabin cooler and gives you privacy. We install premium films that look flawless for years.',
       body: [
-        'Every film is cut to the exact pattern of your car and heat-shrunk to follow the curve of the glass. Rear windows get a single piece with no seams.',
-        'Choose any light transmission level — from 5% (limo effect) to 70% (almost clear). For the front side windows and windshield we advise on the legal limits.',
-        'We use carbon and ceramic films that never fade, never turn purple and do not interfere with GPS or mobile signal.',
+        'Every film is cut to the exact pattern of your car and heat-shrunk on the glass so it follows the curve perfectly. Rear windows get a single piece with no seams.',
+        'Choose any light transmission from 5% (limo look) to 70% (almost clear). For the front side windows and windshield we advise you on the legal limits.',
+        'Ceramic films never fade, never turn purple and do not interfere with GPS or mobile signal.',
       ],
       benefits: [
-        'Blocks 99% of UV radiation — protects skin and interior',
-        'Reduces cabin heat and A/C load',
-        'Hides your belongings from prying eyes',
-        'Holds shattered glass in place',
-        'Cuts glare from the sun and headlights behind',
+        'Blocks 99% of UV — protects your skin and interior',
+        'Keeps the cabin cooler and eases the AC',
+        'Hides belongings from prying eyes',
+        'Holds the glass together if it breaks',
+        'Reduces glare from the sun and headlights behind you',
       ],
       duration: '2–4 hours',
-      priceFrom: 1000,
+      priceFrom: 60,
       faq: [
         {
           q: 'Can I roll my windows down right after tinting?',
-          a: 'We recommend keeping them up for 3–5 days until the adhesive has fully cured.',
+          a: 'We recommend keeping them up for 3–5 days until the adhesive fully cures.',
         },
         {
           q: 'Will there be bubbles?',
-          a: 'Small hazy spots may appear for a few days — that is moisture evaporating on its own. Air or dust bubbles do not happen thanks to our clean bay.',
+          a: 'Small hazy patches may appear in the first days — that is moisture and it evaporates on its own. There are no air or dust bubbles thanks to our clean bay.',
         },
       ],
     },
-    athermal: {
-      name: 'Heat-rejection film',
-      short: 'Nearly clear film for windshield and side windows — stops heat, not light.',
+    buildings: {
+      name: 'Building window tinting',
+      short: 'Solar control and mirror films for homes, offices and shop windows.',
       seo: {
-        title: 'Heat-Rejection Windshield Film in Chișinău | Tonirovka.md',
+        title: 'Building & Office Window Film in Chișinău | Tonirovka.md',
         description:
-          'Ceramic heat-rejection film for windshield and windows: up to 70% less heat, 99% UV protection, nearly clear. Professional install with warranty.',
+          'Window film for apartments, offices, shopfronts and glass facades: solar control, mirror and frosted films. On-site measuring, turnkey installation.',
       },
-      h1: 'Heat-rejection film for windshield and windows',
+      h1: 'Window film for buildings and facades',
       intro:
-        'Heat-rejection film is almost invisible, yet it blocks most of the infrared radiation that heats your car in summer. Ideal for the windshield and front windows.',
+        'Architectural film cuts the heat indoors, stops furniture from fading and hides the interior from the street — without replacing the glass.',
       body: [
-        'Nano-ceramic heat-rejection film lets through 70–80% of visible light, so visibility stays the same, while rejecting up to 70% of solar heat. The cabin is noticeably cooler and the A/C works less.',
-        'On the windshield we apply the film from the inside, in a single heat-formed piece. It does not interfere with rain sensors, cameras or GPS.',
-        'Combine heat-rejection film with classic rear window tint for complete cabin protection.',
+        'We install solar control, mirror, frosted and decorative films on the windows of apartments and houses, office glass partitions, shopfronts and glass facades.',
+        'We come to measure, pick the right film for the job and price it by glass area. Installation is clean and needs no window removal.',
       ],
       benefits: [
-        'Rejects up to 70% of solar heat',
-        'Practically clear — perfect visibility at night too',
-        'Blocks 99% of UV rays',
-        'No interference with sensors, cameras or GPS/GSM',
-        'Reduces glare and eye strain',
+        'Less heat in summer and lower AC bills',
+        'Furniture and floors do not fade',
+        'Daytime privacy — no view in from outside',
+        'Glass holds together on impact',
       ],
-      duration: '2–3 hours',
-      priceFrom: 1600,
-      faq: [
-        {
-          q: 'Is heat-rejection film visible on the windshield?',
-          a: 'Barely. Some films have a slight blue or green hue visible only at certain angles.',
-        },
-      ],
+      duration: 'from 1 day',
+      priceFrom: null,
+      faq: [],
     },
-    lights: {
-      name: 'Headlight & taillight tint',
-      short:
-        'Smoked film for headlights and taillights — aggressive look and stone-chip protection.',
+    headlights: {
+      name: 'Headlight film',
+      short: 'Clear or smoked protective film for headlights and taillights.',
       seo: {
-        title: 'Headlight & Taillight Tinting in Chișinău | Tonirovka.md',
+        title: 'Headlight Protection Film in Chișinău — from €100 | Tonirovka.md',
         description:
-          'Headlight and taillight tinting with smoked or clear protective film. Sporty look, protection from stone chips and scratches. Same-day install.',
+          'Clear polyurethane or smoked film for headlights and taillights. Protection from stone chips and yellowing, plus a sporty look. From €100.',
       },
-      h1: 'Headlight and taillight tinting',
+      h1: 'Headlight protection film',
       intro:
-        'Light film transforms the look of your car and protects headlight plastic from stone chips, scratches and yellowing.',
+        'Film on your lights protects the plastic from stones, scratches and yellowing, and a smoked version changes the look of the car completely.',
       body: [
-        'For taillights we offer smoked films of various shades — from a subtle tint to a fully blacked-out look. For headlights we recommend clear or very light smoke films that do not reduce light output.',
-        'The film is made of flexible polyurethane, applied with heat and removable at any time without damaging the lights.',
+        'For headlights we recommend clear or lightly smoked polyurethane — it does not dim the beam. For taillights there are smoked films in several shades, up to a fully blacked-out look.',
+        'The stretchy film is applied with heat, follows the shape of the lamp and can be removed at any time without harming the lens.',
       ],
       benefits: [
-        'Sporty, unique look',
-        'Protection from stone chips and scratches',
-        'Prevents headlight yellowing',
+        'Protection from stones and sand',
+        'No yellowing or hazing',
+        'Sporty look with smoked film',
         'Removes without residue',
       ],
       duration: '1–2 hours',
-      priceFrom: 700,
+      priceFrom: 100,
       faq: [],
     },
-    strip: {
-      name: 'Windshield sun strip',
-      short: 'Tinted strip across the top of the windshield — protects your eyes from low sun.',
+    wrap: {
+      name: 'Car wrapping',
+      short: 'Paint protection film or colour vinyl — protect the paint or change the colour.',
       seo: {
-        title: 'Windshield Sun Strip — from 300 MDL | Tonirovka.md',
+        title: 'Car Wrapping & PPF in Chișinău — from €300 per panel | Tonirovka.md',
         description:
-          'Tinted sun strip across the top of the windshield. Protection from sunrise and sunset glare, sporty look. Installed in 30 minutes.',
+          'Paint protection film and colour vinyl wraps: single panels, high-impact areas or the whole car. From €300 per panel.',
       },
-      h1: 'Windshield sun strip',
+      h1: 'Car wrapping and paint protection film',
       intro:
-        'A tinted strip across the top of the windshield cuts glare from the low morning and evening sun and gives your car a sporty look.',
+        'Clear polyurethane protects the factory paint from chips and scratches, while colour vinyl changes the look of the car without a respray.',
       body: [
-        'We install the strip at the width you want, within the legally allowed zone, with a perfectly straight edge. Choose black, grey or gradient.',
-        'Installation takes about 30 minutes and can be done together with window tinting.',
+        'Wrap just the high-impact areas — bonnet, bumper, wings, mirrors — or the whole car. We tuck the film around panel edges so no edges show.',
+        'Colour film in gloss, matte or satin changes the look and keeps the original paint safe underneath. It peels off cleanly whenever you want the factory colour back.',
       ],
-      benefits: ['Less sun glare', 'Sporty look', 'Quick install', 'Affordable'],
-      duration: '30 minutes',
+      benefits: [
+        'Protects paint from chips, sand and road salt',
+        'A new colour without a respray',
+        'Keeps resale value up',
+        'Removes without harming the paint',
+      ],
+      duration: 'from 1 day',
+      priceFrom: 300,
+      priceUnit: 'per panel',
+      faq: [],
+    },
+    polishing: {
+      name: 'Paint polishing',
+      short: 'We remove light scratches and holograms and bring back a deep gloss.',
+      seo: {
+        title: 'Car Paint Polishing in Chișinău — from €200 | Tonirovka.md',
+        description:
+          'Paint correction and restoration polishing: removes swirl marks, holograms and dull paint. Protective coating after polishing. From €200.',
+      },
+      h1: 'Car paint polishing',
+      intro:
+        'Polishing removes a thin damaged layer of clear coat along with fine scratches and swirls, so the car looks showroom-new again.',
+      body: [
+        'First we wash the car, remove tar and iron fallout and measure the paint thickness. Then we polish in several stages, choosing compounds and pads for every panel.',
+        'Afterwards we recommend wax or a ceramic coating — the gloss lasts longer and dirt sticks less.',
+      ],
+      benefits: [
+        'Removes light scratches and holograms',
+        'Deep, mirror-like gloss',
+        'Safe — we measure paint thickness',
+        'Perfect prep before selling',
+      ],
+      duration: '1–2 days',
+      priceFrom: 200,
+      faq: [],
+    },
+    cleaning: {
+      name: 'Interior deep cleaning',
+      short: 'Deep cleaning of seats, headliner, carpets and plastics.',
+      seo: {
+        title: 'Car Interior Deep Cleaning in Chișinău — from €100 | Tonirovka.md',
+        description:
+          'Full interior detailing: seats, headliner, carpets, boot and plastics. Stain and odour removal, careful leather care. From €100.',
+      },
+      h1: 'Car interior deep cleaning',
+      intro:
+        'We bring back a clean, fresh cabin: stains, dust and dirt come out of every fabric and gap.',
+      body: [
+        'We vacuum out dust and debris and clean the seats, headliner, carpets, doors and boot with professional products and an extractor. Plastics and leather are cleaned and protected.',
+        'After cleaning we dry the interior thoroughly, so you pick the car up dry and ready to drive.',
+      ],
+      benefits: [
+        'Removes stains and ground-in dirt',
+        'Eliminates bad odours',
+        'Gentle care for leather and Alcantara',
+        'Dry interior at handover',
+      ],
+      duration: '4–8 hours',
+      priceFrom: 100,
+      faq: [],
+    },
+    dryFog: {
+      name: 'Dry fog treatment',
+      short: 'Neutralises smoke, pet and damp odours throughout the cabin.',
+      seo: {
+        title: 'Dry Fog Odour Removal for Cars in Chișinău — from €20 | Tonirovka.md',
+        description:
+          'Dry fog treatment removes smoke, pet, burnt and damp smells and reaches the vents and upholstery. Fast and safe. From €20.',
+      },
+      h1: 'Dry fog odour treatment',
+      intro:
+        'Dry fog gets into the upholstery, headliner and air ducts and breaks down odour molecules instead of masking them.',
+      body: [
+        'A fogger turns the neutralising liquid into ultra-fine particles that fill the whole cabin, including the ventilation system, without leaving moisture.',
+        'It takes about half an hour, and after airing only a light neutral scent remains. A perfect add-on to interior cleaning.',
+      ],
+      benefits: [
+        'Removes smoke, pet and damp smells',
+        'Reaches vents and upholstery',
+        'No moisture or streaks',
+        'About 30 minutes',
+      ],
+      duration: '30–40 minutes',
+      priceFrom: 20,
+      faq: [],
+    },
+    headliner: {
+      name: 'Headliner upholstery',
+      short: 'A new headliner in Alcantara, eco-leather or fabric.',
+      seo: {
+        title: 'Car Headliner Replacement in Chișinău — from €250 | Tonirovka.md',
+        description:
+          'Headliner re-upholstery in Alcantara, eco-leather or fabric. We fix sagging and match the pillars and sun visors. From €250.',
+      },
+      h1: 'Car headliner upholstery',
+      intro:
+        'Sagging or faded headliner? We re-cover it in new material — the cabin looks more upmarket and tidy.',
+      body: [
+        'We take the headliner out, strip the old fabric and foam and re-cover it with the material you choose using heat-resistant adhesive. Pillars, visors and handles can be done to match.',
+        'Combine it with a starlight headliner or ambient lighting — we route the fibre optics and wiring before covering.',
+      ],
+      benefits: [
+        'No more sagging',
+        'Alcantara, eco-leather or fabric',
+        'Matching pillars and visors',
+        'Pairs with a starlight headliner',
+      ],
+      duration: '1–2 days',
+      priceFrom: 250,
+      faq: [],
+    },
+    ambient: {
+      name: 'Ambient lighting',
+      short: 'Contour lighting in the cabin with colours picked from an app.',
+      seo: {
+        title: 'Car Ambient Lighting in Chișinău — from €300 | Tonirovka.md',
+        description:
+          'Ambient contour lighting installed in your cabin: any colour, dynamic modes, control from your phone. From €300.',
+      },
+      h1: 'Ambient interior lighting',
+      intro:
+        'Soft contour lighting along the dashboard and doors makes the cabin feel warm and premium, like in luxury cars.',
+      body: [
+        'We build LED lines into the dashboard, doors, footwells and centre console. Wiring is hidden, with no unnecessary holes.',
+        'Colour and brightness are changed from your phone, and dynamic modes fade between colours or react to music.',
+      ],
+      benefits: [
+        'Dozens of colours and modes',
+        'Phone control',
+        'Hidden, tidy wiring',
+        'A premium-cabin feel',
+      ],
+      duration: '1 day',
       priceFrom: 300,
       faq: [],
     },
-    removal: {
-      name: 'Tint removal',
-      short: 'We remove old film without damaging the glass or the defroster lines.',
+    starlight: {
+      name: 'Starlight headliner',
+      short: 'Hundreds of twinkling stars on your headliner — Rolls-Royce style.',
       seo: {
-        title: 'Car Window Tint Removal in Chișinău | Tonirovka.md',
+        title: 'Starlight Headliner in Chișinău — from €400 | Tonirovka.md',
         description:
-          'We remove old, faded or bubbling tint without damaging the glass or rear defroster. Complete adhesive cleanup. From 400 MDL.',
+          'Starlight headliner for your car: fibre optics, twinkle and shooting-star effects, phone control. From €400.',
       },
-      h1: 'Car window tint removal',
+      h1: 'Starlight headliner',
       intro:
-        'Old film faded, bubbled, or you need to pass inspection? We remove it cleanly, with no scratches and no harm to the rear defroster.',
+        'Hundreds of fibre-optic stars on the roof turn every drive into a night ride under an open sky.',
       body: [
-        'We use steam and special tools that lift the film together with the adhesive. On heated rear windows we work especially carefully to keep the lines intact.',
-        'After removal the glass is fully cleaned and ready for new film — we can install it the same day.',
+        'We take the headliner out and hand-place fibre-optic strands of different thicknesses so the stars vary in brightness like real ones. The light source is hidden behind the trim.',
+        'Add twinkle, shooting stars and colour changes — all controlled from your phone. Pairs perfectly with headliner upholstery.',
       ],
       benefits: [
-        'No scratches on the glass',
-        'Defroster lines stay intact',
-        'Complete adhesive removal',
-        'New film the same day',
+        'Hundreds of stars of varying brightness',
+        'Twinkle and shooting stars',
+        'Colour changes from your phone',
+        'Fibre optics stay cool',
       ],
-      duration: '1–2 hours',
+      duration: '1–2 days',
       priceFrom: 400,
+      faq: [],
+    },
+    aircon: {
+      name: 'AC recharge',
+      short: 'Diagnostics, leak check and refrigerant recharge.',
+      seo: {
+        title: 'Car AC Recharge in Chișinău — from €40 | Tonirovka.md',
+        description:
+          'Car air conditioning recharge: vacuum, leak test and the exact amount of refrigerant and oil for your car. From €40.',
+      },
+      h1: 'Car AC recharge',
+      intro:
+        'AC not cooling? We check the system for leaks and recharge it with the exact amount of refrigerant your car needs.',
+      body: [
+        'We recover the old refrigerant, vacuum the system and check that it holds pressure. Then we fill refrigerant and oil to the factory specification.',
+        'Finally we measure the vent temperature. On request we treat the evaporator and vents against bacteria and odours.',
+      ],
+      benefits: [
+        'Leak test before recharging',
+        'Exact factory-spec amount',
+        'Cold air within 30–60 minutes',
+        'Antibacterial treatment on request',
+      ],
+      duration: '30–60 minutes',
+      priceFrom: 40,
+      faq: [],
+    },
+    evaMats: {
+      name: 'Custom EVA mats',
+      short: 'Honeycomb mats cut to your car — they trap water and dirt.',
+      seo: {
+        title: 'Custom EVA Car Mats in Chișinău — from €50 | Tonirovka.md',
+        description:
+          'EVA floor mats made to your car: cabin and boot, your choice of cell and edging colours. Odourless and easy to wash. From €50.',
+      },
+      h1: 'Custom EVA floor mats',
+      intro:
+        'Honeycomb EVA mats trap water, snow and sand, so your floor stays dry and clean. We make them to the exact shape of your car.',
+      body: [
+        'We cut the mats to your model’s pattern — they cover the whole floor and stay in place. Pick the cell and edging colours from dozens of options.',
+        'EVA is light, odourless, does not crack in frost and rinses clean with water in a minute.',
+      ],
+      benefits: [
+        'Exact fit for your floor',
+        'Trap water, snow and dirt',
+        'Clean in a minute',
+        'Your choice of colours',
+      ],
+      duration: '1–3 days',
+      priceFrom: 50,
       faq: [],
     },
   },
   servicesPage: {
-    h1: 'Car tinting services',
+    h1: 'Our services',
     intro:
-      'From a simple sun strip to full ceramic tint — choose the service you need or message us for a recommendation.',
+      'From tinting and wraps to interior cleaning and starlight headliners — choose the service you need or message us for a recommendation.',
   },
   service: {
     benefitsTitle: 'What you get',
     faqTitle: 'Questions about this service',
     otherTitle: 'Other services',
-    priceNote: 'The final price depends on your car model and chosen film.',
-  },
-  prices: {
-    h1: 'Car tinting prices',
-    intro:
-      'Choose your body type, film and the windows to tint — the calculator shows an estimate instantly.',
-    calcTitle: 'Price calculator',
-    body: 'Body type',
-    film: 'Film type',
-    zones: 'What to tint',
-    bodies: {
-      hatchback: 'Hatchback',
-      sedan: 'Sedan / Wagon',
-      suv: 'SUV / Crossover',
-      minivan: 'Minivan',
-    },
-    zoneNames: {
-      rear: 'Rear half (rear sides + back glass)',
-      front: 'Front side windows',
-      strip: 'Windshield sun strip',
-      windshield: 'Heat-rejection windshield',
-      lights: 'Taillights / headlights',
-    },
-    total: 'Estimated price',
-    note: 'This is an estimate. We confirm the exact price once we know your car model.',
-    tableTitle: 'Base prices',
-    book: 'Book with this configuration',
-    message: 'Estimate',
+    priceNote: 'The final price depends on your car model and the scope of work.',
+    galleryTitle: 'Gallery',
+    photo: 'Photo',
+    prev: 'Previous photo',
+    next: 'Next photo',
   },
   gallery: {
     h1: 'Gallery & tint levels',
@@ -371,8 +512,8 @@ export const EN: Dict = {
         a: 'Rear windows usually have no restrictions. For the windshield and front side windows the law sets a minimum light transmission — we advise you before installation and suggest a legal option.',
       },
       {
-        q: 'What is the difference between carbon and ceramic film?',
-        a: 'Neither fades nor affects signal. Ceramic rejects significantly more heat and offers better clarity, but costs more.',
+        q: 'What is the difference between standard and ceramic film?',
+        a: 'Both block 99% of UV. Ceramic rejects significantly more heat, offers better clarity and never fades, but costs more.',
       },
       {
         q: 'What warranty do you offer?',
@@ -426,7 +567,7 @@ export const EN: Dict = {
   },
   footer: {
     about:
-      'Professional car tinting studio. Premium films, clean-bay installation and a written warranty.',
+      'Car tinting and detailing studio. Premium materials, clean-bay work and a written warranty.',
     rights: 'All rights reserved.',
     legal: 'We advise on the tint levels permitted by law.',
     navTitle: 'Navigation',

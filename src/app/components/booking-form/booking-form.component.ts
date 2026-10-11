@@ -28,8 +28,6 @@ export class BookingFormComponent {
 
   /** Pre-selected service (e.g. on a service page). */
   service = input<ServiceId | ''>('');
-  /** Extra line added to the message, e.g. the price calculator summary. */
-  note = input('');
 
   protected readonly services = SERVICE_IDS;
   protected readonly name = signal('');
@@ -57,7 +55,6 @@ export class BookingFormComponent {
       this.car().trim() && `${b.car}: ${this.car().trim()}`,
       selected && `${b.service}: ${t.services[selected].name}`,
       this.date() && `${b.date}: ${this.date()}`,
-      this.note(),
       this.comment().trim() && `${b.comment}: ${this.comment().trim()}`,
     ];
     return lines.filter(Boolean).join('\n');

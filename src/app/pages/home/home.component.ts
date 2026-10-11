@@ -3,8 +3,9 @@ import { RouterLink } from '@angular/router';
 import { CtaSectionComponent } from '@components/cta-section/cta-section.component';
 import { FaqListComponent } from '@components/faq-list/faq-list.component';
 import { FilmsTableComponent } from '@components/films-table/films-table.component';
+import { ScrollToDirective } from '@directives/scroll-to.directive';
 import { IconComponent } from '@components/icon/icon.component';
-import { ServiceCardComponent } from '@components/service-card/service-card.component';
+import { ServicesSliderComponent } from '@components/services-slider/services-slider.component';
 import { TintPickerComponent } from '@components/tint-picker/tint-picker.component';
 import { SERVICE_IDS } from '@/config/routes';
 import { BUSINESS } from '@/config/site';
@@ -14,9 +15,10 @@ import { LanguageService } from '@services/language.service';
 @Component({
   imports: [
     RouterLink,
+    ScrollToDirective,
     IconComponent,
     TintPickerComponent,
-    ServiceCardComponent,
+    ServicesSliderComponent,
     FilmsTableComponent,
     FaqListComponent,
     CtaSectionComponent,
