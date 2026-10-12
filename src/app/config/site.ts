@@ -18,7 +18,7 @@ export const SITE_ICON = 'assets/icons/app/icon-512.png';
 // Business details for the footer, contact page and schema.org markup.
 export const BUSINESS = {
   address: {
-    street: 'str. Milano 19/1',
+    street: 'str. Milano 19/1, box 260',
     city: 'Chișinău',
     region: 'Chișinău',
     country: 'MD',
@@ -32,16 +32,18 @@ export const BUSINESS = {
   }[],
   priceRange: '$$',
   currency: 'EUR',
-  foundedYear: 2016,
+  foundedYear: 2003,
   carsDone: 3500,
   warrantyYears: 10,
 };
 
-const MAP_QUERY = encodeURIComponent(`${BUSINESS.address.street}, ${BUSINESS.address.city}`);
+// Exact location of the studio (from its Google Maps listing) - the box number can't be geocoded.
+export const GEO = { lat: 47.0397568, lng: 28.7907947 };
 
-// Google Maps search for the address (contact page link and schema.org `hasMap`) and its embed.
-export const MAP_URL = `https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`;
-export const MAP_EMBED_URL = `https://www.google.com/maps?q=${MAP_QUERY}&z=16&output=embed`;
+// The studio's Google Maps listing (contact page link and schema.org `hasMap`) and the map embed
+// centred on it - the contact page draws the logo pin over the centre.
+export const MAP_URL = `https://www.google.com/maps/search/tonirovka+md/@${GEO.lat},${GEO.lng},17z`;
+export const MAP_EMBED_URL = `https://www.google.com/maps?q=${GEO.lat},${GEO.lng}&z=17&output=embed`;
 
 // Social profiles: shown in the footer and listed in schema.org `sameAs`. Empty = hidden.
 export const SOCIAL_LINKS: Record<'instagram' | 'facebook' | 'tiktok', string> = {

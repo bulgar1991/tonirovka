@@ -67,7 +67,9 @@
       </div>
     </div>
 
-    <div class="min-h-[360px] overflow-hidden rounded-2xl border border-ink-700 bg-ink-900">
+    <div
+      class="relative min-h-[360px] overflow-hidden rounded-2xl border border-ink-700 bg-ink-900"
+    >
       <iframe
         [src]="mapEmbed"
         [title]="c.mapTitle"
@@ -75,6 +77,22 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
+      <!-- Our logo as the map pin: the map is centred on the studio, so the tip marks it. -->
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-full flex-col items-center drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]"
+        aria-hidden="true"
+      >
+        <img
+          src="assets/images/logo/logo.svg"
+          alt=""
+          width="72"
+          height="72"
+          class="h-[72px] w-[72px] rounded-full ring-4 ring-brand-600"
+        />
+        <span
+          class="-mt-1 h-0 w-0 border-x-[10px] border-t-[14px] border-x-transparent border-t-brand-600"
+        ></span>
+      </div>
     </div>
   </div>
 </section>
