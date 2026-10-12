@@ -6,6 +6,8 @@
   [subtitle]="s.intro"
   [parent]="{ label: t.nav.services, link: i18n.link('services') }"
   [image]="media().hero"
+  [imageSmall]="media().heroSmall"
+  [imageAlt]="s.name"
 >
   @if (media().effect; as effect) {
     <app-hero-effect backdrop [effect]="effect" />
@@ -14,9 +16,10 @@
     <span
       class="rounded-full border border-brand-600/50 bg-brand-600/10 px-4 py-2 text-sm text-white backdrop-blur"
     >
-      <app-service-price [service]="service()" />
+      <app-service-price [service]="service()" data-testid="service-price" />
     </span>
     <span
+      data-testid="service-duration"
       class="flex items-center gap-2 rounded-full border border-ink-700 bg-ink-950/40 px-4 py-2 text-sm text-ink-300 backdrop-blur"
     >
       <app-icon name="clock" [size]="16" class="text-brand-500" />{{ t.common.duration }}:
@@ -26,26 +29,27 @@
       appScrollTo="booking"
       [page]="i18n.link('service', service())"
       class="btn btn-primary !min-h-[42px]"
+      data-testid="service-book-button"
       >{{ t.common.bookNow }}</a
     >
   </div>
 </app-page-header>
 
-<section class="mt-12 sm:mt-16">
+<section class="mt-12 sm:mt-16" data-testid="service-description">
   <div class="container-site grid gap-12 lg:grid-cols-[1.4fr_1fr]">
     <div class="prose-site text-base leading-relaxed text-ink-300 sm:text-lg">
       @for (p of s.body; track $index) {
         <p>{{ p }}</p>
       }
       @if (isTinting()) {
-        <div class="card mt-10 p-5 sm:p-8">
+        <div class="card mt-10 p-5 sm:p-8" data-testid="service-tint-picker">
           <h2 class="font-display text-lg font-bold sm:text-xl">{{ t.home.tintTitle }}</h2>
           <app-tint-picker class="mt-4 block" />
         </div>
       }
     </div>
 
-    <aside class="lg:sticky lg:top-28 lg:self-start">
+    <aside class="lg:sticky lg:top-28 lg:self-start" data-testid="service-benefits">
       <div class="card p-6 sm:p-8">
         <h2 class="font-display text-xl font-bold">{{ t.service.benefitsTitle }}</h2>
         <ul class="mt-5 space-y-3.5">
@@ -63,7 +67,11 @@
         <p class="mt-6 border-t border-ink-700 pt-5 text-xs text-ink-400">
           {{ t.service.priceNote }}
         </p>
-        <a [routerLink]="i18n.link('services')" class="btn btn-ghost mt-5 w-full">
+        <a
+          [routerLink]="i18n.link('services')"
+          class="btn btn-ghost mt-5 w-full"
+          data-testid="service-all-services-link"
+        >
           <app-icon name="layers" [size]="18" />{{ t.common.allServices }}
         </a>
       </div>
@@ -71,7 +79,7 @@
   </div>
 </section>
 
-<section class="section" id="gallery">
+<section class="section" id="gallery" data-testid="service-gallery">
   <div class="container-site">
     <h2 class="h2 mt-0">{{ t.service.galleryTitle }}</h2>
     <app-photo-gallery class="mt-10" [photos]="media().gallery" [alt]="s.name" />
@@ -79,7 +87,7 @@
 </section>
 
 @if (isTinting()) {
-  <section class="section">
+  <section class="section" data-testid="service-films">
     <div class="container-site">
       <h2 class="h2 mt-0">{{ t.home.filmsTitle }}</h2>
       <p class="lead">{{ t.home.filmsText }}</p>
@@ -89,7 +97,7 @@
 }
 
 @if (s.faq.length) {
-  <section class="section">
+  <section class="section" data-testid="service-faq">
     <div class="container-site max-w-4xl">
       <h2 class="h2 mt-0">{{ t.service.faqTitle }}</h2>
       <app-faq-list class="mt-8" [items]="s.faq" />
@@ -97,7 +105,11 @@
   </section>
 }
 
-<section class="section-band border-y border-ink-800 bg-ink-900/50" id="booking">
+<section
+  class="section-band border-y border-ink-800 bg-ink-900/50"
+  id="booking"
+  data-testid="service-booking"
+>
   <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.5fr]">
     <div>
       <p class="eyebrow">{{ s.name }}</p>
@@ -110,7 +122,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" data-testid="service-other">
   <div class="container-site">
     <h2 class="h2 mt-0">{{ t.service.otherTitle }}</h2>
     <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -30,7 +30,14 @@ import { A11y, Keyboard, Navigation } from 'swiper/modules';
   host: { class: 'block' },
   template: `
     @let t = i18n.t();
-    <div #container class="swiper !overflow-visible" [attr.aria-label]="t.nav.services">
+    <div
+      #container
+      class="swiper !overflow-visible"
+      role="region"
+      aria-roledescription="carousel"
+      [attr.aria-label]="t.nav.services"
+      data-testid="services-slider"
+    >
       <div class="swiper-wrapper">
         @for (id of services(); track id) {
           <div class="swiper-slide">
@@ -52,6 +59,7 @@ import { A11y, Keyboard, Navigation } from 'swiper/modules';
           type="button"
           class="grid h-12 w-12 place-items-center rounded-full border border-ink-600 text-white transition hover:border-brand-500 hover:bg-brand-600 disabled:pointer-events-none disabled:opacity-30"
           [attr.aria-label]="t.service.prev"
+          data-testid="services-slider-prev"
         >
           <app-icon name="prev" [size]="20" />
         </button>
@@ -60,6 +68,7 @@ import { A11y, Keyboard, Navigation } from 'swiper/modules';
           type="button"
           class="grid h-12 w-12 place-items-center rounded-full border border-ink-600 text-white transition hover:border-brand-500 hover:bg-brand-600 disabled:pointer-events-none disabled:opacity-30"
           [attr.aria-label]="t.service.next"
+          data-testid="services-slider-next"
         >
           <app-icon name="next" [size]="20" />
         </button>

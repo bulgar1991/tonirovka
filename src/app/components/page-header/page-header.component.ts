@@ -9,8 +9,9 @@ import { LanguageService } from '@services/language.service';
  *
  * `parent` adds a middle breadcrumb step, e.g. Home > Services > <service name>.
  * `crumb` is the last breadcrumb step when it should differ from the (long) h1.
- * `image` puts a darkened photo behind the title; an element with a `backdrop` attribute is
- * projected over the background (e.g. an animated effect), the rest goes under the subtitle.
+ * `image` puts a darkened photo behind the title (`imageSmall` is its 800-wide copy for phones,
+ * `imageAlt` describes it); an element with a `backdrop` attribute is projected over the
+ * background (e.g. an animated effect), the rest goes under the subtitle.
  */
 @Component({
   imports: [RouterLink],
@@ -26,4 +27,6 @@ export class PageHeaderComponent {
   crumb = input<string>();
   parent = input<{ label: string; link: string }>();
   image = input<string>();
+  imageSmall = input<string>();
+  imageAlt = input('');
 }

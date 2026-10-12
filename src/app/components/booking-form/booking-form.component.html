@@ -2,6 +2,7 @@
 @let b = t.booking;
 <form
   class="grid gap-4 sm:grid-cols-2"
+  data-testid="booking-form"
   novalidate
   (submit)="$event.preventDefault(); send('whatsapp')"
 >
@@ -11,6 +12,7 @@
       class="field"
       type="text"
       name="name"
+      data-testid="booking-name"
       autocomplete="name"
       required
       [value]="name()"
@@ -24,6 +26,7 @@
       class="field"
       type="tel"
       name="phone"
+      data-testid="booking-phone"
       autocomplete="tel"
       inputmode="tel"
       required
@@ -38,6 +41,7 @@
       class="field"
       type="text"
       name="car"
+      data-testid="booking-car"
       [placeholder]="b.carPlaceholder"
       [value]="car()"
       (input)="car.set(value($event))"
@@ -45,7 +49,12 @@
   </label>
   <label class="block">
     <span class="label">{{ b.service }}</span>
-    <select class="field" name="service" (change)="selected.set($any(value($event)))">
+    <select
+      class="field"
+      name="service"
+      data-testid="booking-service"
+      (change)="selected.set($any(value($event)))"
+    >
       <option value="" [selected]="!selected()">—</option>
       @for (id of services; track id) {
         <option [value]="id" [selected]="selected() === id">{{ t.services[id].name }}</option>
@@ -58,6 +67,7 @@
       class="field [color-scheme:dark]"
       type="date"
       name="date"
+      data-testid="booking-date"
       [min]="today"
       [value]="date()"
       (input)="date.set(value($event))"
@@ -69,16 +79,22 @@
       class="field"
       type="text"
       name="comment"
+      data-testid="booking-comment"
       [value]="comment()"
       (input)="comment.set(value($event))"
     />
   </label>
 
   <div class="flex flex-col gap-3 pt-2 sm:col-span-2 sm:flex-row">
-    <button type="submit" class="btn btn-primary flex-1">
+    <button type="submit" class="btn btn-primary flex-1" data-testid="booking-send-whatsapp">
       <app-icon name="chat" [size]="18" />{{ b.sendWhatsapp }}
     </button>
-    <button type="button" class="btn btn-ghost flex-1" (click)="send('telegram')">
+    <button
+      type="button"
+      class="btn btn-ghost flex-1"
+      data-testid="booking-send-telegram"
+      (click)="send('telegram')"
+    >
       <app-icon name="send" [size]="18" />{{ b.sendTelegram }}
     </button>
   </div>
@@ -86,6 +102,7 @@
   <p
     class="text-sm sm:col-span-2"
     aria-live="polite"
+    data-testid="booking-status"
     [class]="submitted() && !valid() ? 'text-brand-400' : 'text-ink-400'"
   >
     @if (submitted() && !valid()) {

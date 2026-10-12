@@ -3,13 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "prestart": "node scripts/optimize-images.mjs",
     "start": "ng serve",
+    "prebuild": "node scripts/optimize-images.mjs",
     "build": "ng build && node scripts/postbuild.mjs",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint --fix",
     "prettier": "npx prettier --write .",
     "test": "ng test",
-    "test:watch": "ng test --watch"
+    "test:watch": "ng test --watch",
+    "images": "node scripts/optimize-images.mjs"
   },
   "private": true,
   "packageManager": "npm@11.19.0",
@@ -73,6 +76,7 @@
     "postcss": "^8.5.28",
     "prettier": "^3.8.1",
     "prettier-eslint": "^17.1.2",
+    "sharp": "^0.34.3",
     "tailwindcss": "^3.4.19",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.69.0",

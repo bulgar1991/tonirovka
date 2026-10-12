@@ -25,6 +25,7 @@ import { LanguageService } from '@services/language.service';
           [src]="image()"
           [alt]="content().name"
           loading="lazy"
+          decoding="async"
           width="800"
           height="500"
           class="h-full w-full object-cover transition duration-500 group-hover:scale-105"

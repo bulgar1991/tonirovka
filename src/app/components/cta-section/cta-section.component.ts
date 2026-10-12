@@ -10,12 +10,13 @@ import { LanguageService } from '@services/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },
   template: `
-    <section class="section">
+    <section class="section" data-testid="cta-section">
       <div class="container-site flex justify-center">
         <a
           appScrollTo="booking"
           [page]="i18n.link('contacts')"
           class="btn btn-primary min-h-[56px] px-10 text-base"
+          data-testid="cta-book"
         >
           {{ i18n.t().common.bookNow }}<app-icon name="arrow" [size]="18" />
         </a>

@@ -1,7 +1,7 @@
 import { DOCUMENT, inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { PageRef } from '@/config/routes';
-import { jsonLdText, metaTags, pageSeo } from './seo-data';
+import { jsonLdText, manifestPath, metaTags, pageSeo } from './seo-data';
 
 export { HOME_FAQ_COUNT } from './seo-data';
 
@@ -21,6 +21,7 @@ export class SeoService {
     const head = this.doc.head;
 
     this.doc.documentElement.lang = seo.lang;
+    head.querySelector('link[rel="manifest"]')?.setAttribute('href', manifestPath(ref.lang));
     this.title.setTitle(seo.title);
 
     for (const [attr, key, content] of metaTags(seo)) {

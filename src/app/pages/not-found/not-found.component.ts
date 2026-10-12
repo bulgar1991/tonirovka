@@ -10,15 +10,21 @@ import { LanguageService } from '@services/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @let t = i18n.t();
-    <section class="relative overflow-hidden pt-32 text-center sm:pt-40">
+    <section class="relative overflow-hidden pt-32 text-center sm:pt-40" data-testid="not-found">
       <div class="red-glow pointer-events-none absolute inset-0"></div>
       <div class="container-site relative">
         <p class="font-display text-[7rem] font-bold leading-none text-brand-600 sm:text-[10rem]">
           404
         </p>
-        <h1 class="mt-2 text-3xl font-bold sm:text-4xl">{{ t.notFound.h1 }}</h1>
+        <h1 class="mt-2 text-3xl font-bold sm:text-4xl" data-testid="page-title">
+          {{ t.notFound.h1 }}
+        </h1>
         <p class="mx-auto mt-4 max-w-md text-ink-400">{{ t.notFound.text }}</p>
-        <a [routerLink]="i18n.link('home')" class="btn btn-primary mt-8">
+        <a
+          [routerLink]="i18n.link('home')"
+          class="btn btn-primary mt-8"
+          data-testid="not-found-home-link"
+        >
           {{ t.notFound.back }}<app-icon name="arrow" [size]="16" />
         </a>
         <app-tint-car class="mx-auto mt-12 max-w-xl opacity-80" [vlt]="5" />

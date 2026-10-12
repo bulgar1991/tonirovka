@@ -16,13 +16,13 @@ import { LanguageService } from '@services/language.service';
     @let g = t.gallery;
     <app-page-header [title]="g.h1" [crumb]="t.nav.gallery" [subtitle]="g.intro" />
 
-    <section class="mt-12 sm:mt-16">
+    <section class="mt-12 sm:mt-16" data-testid="gallery-tint-levels">
       <div class="container-site">
         <h2 class="h2 mt-0">{{ g.levelsTitle }}</h2>
         <p class="lead">{{ g.levelsText }}</p>
         <ul class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           @for (vlt of levels; track vlt) {
-            <li class="card overflow-hidden">
+            <li class="card overflow-hidden" [attr.data-testid]="'gallery-tint-level-' + vlt">
               <div class="bg-gradient-to-b from-ink-850 to-ink-950 px-4 pt-6">
                 <app-tint-car [vlt]="vlt" [label]="'VLT ' + vlt + '%'" />
               </div>
@@ -36,17 +36,21 @@ import { LanguageService } from '@services/language.service';
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" data-testid="gallery-works">
       <div class="container-site">
         <h2 class="h2 mt-0">{{ g.worksTitle }}</h2>
         @if (works.length) {
           <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             @for (work of works; track work.src) {
-              <li class="group relative overflow-hidden rounded-2xl border border-ink-700">
+              <li
+                class="group relative overflow-hidden rounded-2xl border border-ink-700"
+                data-testid="gallery-work"
+              >
                 <img
                   [src]="work.src"
                   [alt]="work.car + ' — ' + t.services.tinting.name + ' ' + work.vlt + '%'"
                   loading="lazy"
+                  decoding="async"
                   width="800"
                   height="600"
                   class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
@@ -62,11 +66,18 @@ import { LanguageService } from '@services/language.service';
           </ul>
         } @else {
           <div
+            data-testid="gallery-works-empty"
             class="card mt-8 flex flex-col items-start gap-5 p-8 sm:flex-row sm:items-center sm:justify-between"
           >
             <p class="max-w-xl text-ink-300">{{ g.worksEmpty }}</p>
             @if (instagram) {
-              <a [href]="instagram" target="_blank" rel="noopener" class="btn btn-primary shrink-0">
+              <a
+                [href]="instagram"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary shrink-0"
+                data-testid="gallery-instagram-link"
+              >
                 <app-icon name="instagram" [size]="18" />{{ g.follow }}
               </a>
             }

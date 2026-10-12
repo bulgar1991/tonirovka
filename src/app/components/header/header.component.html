@@ -8,7 +8,10 @@
       : 'border-transparent'
   "
 >
-  <nav class="container-site flex h-16 items-center justify-between gap-4 lg:h-20">
+  <nav
+    class="container-site flex h-16 items-center justify-between gap-4 lg:h-20"
+    data-testid="main-navigation"
+  >
     <a
       class="site-logo"
       [routerLink]="i18n.link('home')"
@@ -44,6 +47,7 @@
         class="btn btn-primary hidden !min-h-[42px] !px-5 md:inline-flex"
         appScrollTo="booking"
         [page]="i18n.link('contacts')"
+        data-testid="header-book"
         >{{ t.nav.book }}</a
       >
       <button
@@ -75,7 +79,12 @@
     data-testid="mobile-menu"
   >
     <div class="sidebar__header">
-      <a [routerLink]="i18n.link('home')" (click)="closeSidebar()" [attr.aria-label]="siteName">
+      <a
+        [routerLink]="i18n.link('home')"
+        (click)="closeSidebar()"
+        [attr.aria-label]="siteName"
+        data-testid="mobile-menu-logo"
+      >
         <app-logo />
       </a>
       <button

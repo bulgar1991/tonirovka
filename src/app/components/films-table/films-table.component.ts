@@ -9,10 +9,11 @@ import { LanguageService } from '@services/language.service';
   host: { class: 'block' },
   template: `
     @let t = i18n.t();
-    <div class="grid max-w-4xl gap-4 md:grid-cols-2">
+    <div class="grid max-w-4xl gap-4 md:grid-cols-2" data-testid="films-table">
       @for (film of films; track film; let i = $index) {
         <div
           class="relative rounded-2xl border p-6 sm:p-7"
+          [attr.data-testid]="'film-' + film"
           [class]="
             film === popular
               ? 'border-brand-600 bg-gradient-to-b from-brand-600/15 to-ink-900'
