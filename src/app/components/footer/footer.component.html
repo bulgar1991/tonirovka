@@ -16,6 +16,7 @@
               target="_blank"
               rel="noopener"
               [attr.aria-label]="social.name"
+              [attr.data-testid]="'footer-social-' + social.name"
             >
               <app-icon [name]="social.name" [size]="18" />
             </a>
@@ -24,7 +25,7 @@
       </div>
 
       <!-- Quick links -->
-      <nav [attr.aria-label]="t.footer.navTitle">
+      <nav [attr.aria-label]="t.footer.navTitle" data-testid="footer-navigation">
         <h2 class="site-footer__heading">{{ t.footer.navTitle }}</h2>
         <ul class="site-footer__links">
           @for (item of menuItems; track item.id) {
@@ -41,7 +42,7 @@
       </nav>
 
       <!-- Services -->
-      <nav [attr.aria-label]="t.footer.servicesTitle">
+      <nav [attr.aria-label]="t.footer.servicesTitle" data-testid="footer-services">
         <h2 class="site-footer__heading">{{ t.footer.servicesTitle }}</h2>
         <ul class="site-footer__links">
           @for (id of services; track id) {

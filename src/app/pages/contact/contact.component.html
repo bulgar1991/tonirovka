@@ -2,7 +2,7 @@
 @let c = t.contacts;
 <app-page-header [title]="c.h1" [subtitle]="c.intro" />
 
-<section class="mt-12 sm:mt-16">
+<section class="mt-12 sm:mt-16" data-testid="contact-info">
   <div class="container-site grid gap-6 lg:grid-cols-[1fr_1.4fr]">
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
       <a
@@ -10,6 +10,7 @@
         target="_blank"
         rel="noopener"
         class="card group flex gap-4 p-6 transition hover:border-brand-600/60"
+        data-testid="contact-address"
       >
         <span
           class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
@@ -22,7 +23,11 @@
           >
         </span>
       </a>
-      <a [href]="phoneHref" class="card group flex gap-4 p-6 transition hover:border-brand-600/60">
+      <a
+        [href]="phoneHref"
+        class="card group flex gap-4 p-6 transition hover:border-brand-600/60"
+        data-testid="contact-phone"
+      >
         <span
           class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
           ><app-icon name="phone"
@@ -35,7 +40,11 @@
           >
         </span>
       </a>
-      <a [href]="emailHref" class="card group flex gap-4 p-6 transition hover:border-brand-600/60">
+      <a
+        [href]="emailHref"
+        class="card group flex gap-4 p-6 transition hover:border-brand-600/60"
+        data-testid="contact-email"
+      >
         <span
           class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
           ><app-icon name="mail"
@@ -47,7 +56,7 @@
           }}</span>
         </span>
       </a>
-      <div class="card flex gap-4 p-6">
+      <div class="card flex gap-4 p-6" data-testid="contact-hours">
         <span
           class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/15 text-brand-400"
           ><app-icon name="clock"
@@ -58,16 +67,27 @@
         </div>
       </div>
       <div class="flex gap-3 sm:col-span-2 lg:col-span-1">
-        <a [href]="whatsappUrl" target="_blank" rel="noopener" class="btn btn-primary flex-1"
+        <a
+          [href]="whatsappUrl"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary flex-1"
+          data-testid="contact-whatsapp"
           ><app-icon name="chat" [size]="18" />WhatsApp</a
         >
-        <a [href]="telegramUrl" target="_blank" rel="noopener" class="btn btn-ghost flex-1"
+        <a
+          [href]="telegramUrl"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-ghost flex-1"
+          data-testid="contact-telegram"
           ><app-icon name="send" [size]="18" />Telegram</a
         >
       </div>
     </div>
 
     <div
+      data-testid="contact-map"
       class="relative min-h-[360px] overflow-hidden rounded-2xl border border-ink-700 bg-ink-900"
     >
       <iframe
@@ -97,7 +117,11 @@
   </div>
 </section>
 
-<section class="section-band border-y border-ink-800 bg-ink-900/50" id="booking">
+<section
+  class="section-band border-y border-ink-800 bg-ink-900/50"
+  id="booking"
+  data-testid="contact-booking"
+>
   <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.5fr]">
     <div>
       <h2 class="h2 mt-0">{{ t.booking.title }}</h2>

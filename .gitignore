@@ -42,3 +42,7 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Web copies of the service photos, made by scripts/optimize-images.mjs
+/src/assets/images/services/*/*.webp
+/src/assets/images/services/*/og.jpg

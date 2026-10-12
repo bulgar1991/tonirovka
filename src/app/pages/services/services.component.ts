@@ -16,7 +16,7 @@ import { LanguageService } from '@services/language.service';
       [crumb]="t.nav.services"
       [subtitle]="t.servicesPage.intro"
     />
-    <section class="mt-12 sm:mt-16">
+    <section class="mt-12 sm:mt-16" data-testid="services-list">
       <div class="container-site grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         @for (id of services; track id) {
           <app-service-card [service]="id" />

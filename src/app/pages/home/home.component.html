@@ -2,7 +2,10 @@
 @let h = t.home;
 
 <!-- Hero -->
-<section class="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-24">
+<section
+  class="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-24"
+  data-testid="home-hero"
+>
   <div class="red-glow pointer-events-none absolute inset-0"></div>
   <div class="grid-lines pointer-events-none absolute inset-0"></div>
 
@@ -10,6 +13,7 @@
     <div>
       <p class="eyebrow animate-fade-up">{{ h.badge }}</p>
       <h1
+        data-testid="page-title"
         class="mt-5 animate-fade-up text-4xl font-bold leading-[1.05] [animation-delay:80ms] sm:text-6xl xl:text-7xl"
       >
         {{ h.title }}
@@ -24,14 +28,24 @@
         {{ h.text }}
       </p>
       <div class="mt-8 flex animate-fade-up flex-col gap-3 [animation-delay:240ms] sm:flex-row">
-        <a appScrollTo="booking" [page]="i18n.link('contacts')" class="btn btn-primary">
+        <a
+          appScrollTo="booking"
+          [page]="i18n.link('contacts')"
+          class="btn btn-primary"
+          data-testid="home-hero-book"
+        >
           {{ h.ctaPrimary }}<app-icon name="arrow" [size]="16" />
         </a>
-        <a [routerLink]="i18n.link('services')" class="btn btn-ghost">
+        <a
+          [routerLink]="i18n.link('services')"
+          class="btn btn-ghost"
+          data-testid="home-hero-services"
+        >
           <app-icon name="layers" [size]="18" />{{ h.ctaSecondary }}
         </a>
       </div>
       <dl
+        data-testid="home-stats"
         class="mt-12 grid max-w-lg animate-fade-up grid-cols-3 gap-4 border-t border-ink-700 pt-8 [animation-delay:320ms]"
       >
         @for (stat of stats(); track stat.label) {
@@ -45,7 +59,7 @@
     </div>
 
     <div class="animate-fade-up [animation-delay:200ms]">
-      <div class="card relative p-5 sm:p-8">
+      <div class="card relative p-5 sm:p-8" data-testid="home-tint-picker">
         <h2 class="font-display text-lg font-bold sm:text-xl">{{ h.tintTitle }}</h2>
         <p class="mt-2 text-sm leading-relaxed text-ink-400">{{ h.tintText }}</p>
         <app-tint-picker class="mt-4 block" />
@@ -55,7 +69,7 @@
 </section>
 
 <!-- Services -->
-<section class="section overflow-hidden" id="services">
+<section class="section overflow-hidden" id="services" data-testid="home-services">
   <div class="container-site">
     <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
       <div>
@@ -63,7 +77,11 @@
         <h2 class="h2">{{ h.servicesTitle }}</h2>
         <p class="lead">{{ h.servicesText }}</p>
       </div>
-      <a [routerLink]="i18n.link('services')" class="btn btn-ghost shrink-0">
+      <a
+        [routerLink]="i18n.link('services')"
+        class="btn btn-ghost shrink-0"
+        data-testid="home-all-services"
+      >
         {{ t.common.allServices }}<app-icon name="arrow" [size]="16" />
       </a>
     </div>
@@ -72,7 +90,7 @@
 </section>
 
 <!-- Why us -->
-<section class="section-band relative overflow-hidden bg-ink-900/50">
+<section class="section-band relative overflow-hidden bg-ink-900/50" data-testid="home-why">
   <div class="container-site">
     <p class="eyebrow">{{ h.whyTitle }}</p>
     <h2 class="h2 max-w-2xl">{{ h.whyText }}</h2>
@@ -95,7 +113,7 @@
 </section>
 
 <!-- Films -->
-<section class="section">
+<section class="section" data-testid="home-films">
   <div class="container-site">
     <p class="eyebrow">{{ t.services.tinting.name }}</p>
     <h2 class="h2">{{ h.filmsTitle }}</h2>
@@ -105,7 +123,7 @@
 </section>
 
 <!-- Process -->
-<section class="section-band border-y border-ink-800 bg-ink-900/50">
+<section class="section-band border-y border-ink-800 bg-ink-900/50" data-testid="home-process">
   <div class="container-site">
     <h2 class="h2 mt-0">{{ h.processTitle }}</h2>
     <ol class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -129,12 +147,12 @@
 </section>
 
 <!-- FAQ -->
-<section class="section">
+<section class="section" data-testid="home-faq">
   <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
     <div>
       <p class="eyebrow">FAQ</p>
       <h2 class="h2">{{ h.faqTitle }}</h2>
-      <a [routerLink]="i18n.link('faq')" class="btn btn-ghost mt-8">
+      <a [routerLink]="i18n.link('faq')" class="btn btn-ghost mt-8" data-testid="home-faq-link">
         {{ t.nav.faq }}<app-icon name="arrow" [size]="16" />
       </a>
     </div>

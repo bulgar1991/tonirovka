@@ -4,12 +4,13 @@ export const SITE_URL = 'https://tonirovka.md';
 
 export const SITE_NAME = 'Tonirovka.md';
 
-// Default image when a page is shared on social media (1200×630).
+// Default image when a page is shared on social media (1200×630), one per language:
+// og-ro.jpg, og-ru.jpg, og-en.jpg. Service pages use their own photo instead.
 export const SITE_SHARE_IMAGE = {
-  path: 'assets/images/seo/og-image.png',
+  path: (lang: string) => `assets/images/seo/og-${lang}.jpg`,
   width: 1200,
   height: 630,
-  type: 'image/png',
+  type: 'image/jpeg',
 };
 
 // Square logo for structured data (Google uses it in search results).

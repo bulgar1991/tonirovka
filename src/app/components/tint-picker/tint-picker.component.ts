@@ -35,6 +35,7 @@ export const VLT_LEVELS = [5, 15, 20, 35, 50, 70];
               type="radio"
               name="vlt"
               class="peer sr-only"
+              [attr.data-testid]="'tint-level-' + level"
               [value]="level"
               [checked]="vlt() === level"
               (change)="vlt.set(level)"
@@ -47,7 +48,11 @@ export const VLT_LEVELS = [5, 15, 20, 35, 50, 70];
           </label>
         }
       </div>
-      <p class="mt-4 min-h-[3rem] text-sm leading-relaxed text-ink-300" aria-live="polite">
+      <p
+        class="mt-4 min-h-[3rem] text-sm leading-relaxed text-ink-300"
+        aria-live="polite"
+        data-testid="tint-description"
+      >
         <strong class="text-white">VLT {{ vlt() }}%</strong> — {{ t.tint.levels[vlt()] }}
       </p>
     </fieldset>
