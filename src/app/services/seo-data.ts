@@ -2,6 +2,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE_HREF } from '@/config/contact';
 import { DEFAULT_LANG, LANGS, OG_LOCALES, PageRef, pathFor } from '@/config/routes';
 import {
   BUSINESS,
+  GEO,
   MAP_URL,
   SITE_ICON,
   SITE_NAME,
@@ -128,6 +129,7 @@ function buildJsonLd(ref: PageRef, url: string): JsonLd {
       addressRegion: BUSINESS.address.region,
       addressCountry: BUSINESS.address.country,
     },
+    geo: { '@type': 'GeoCoordinates', latitude: GEO.lat, longitude: GEO.lng },
     hasMap: MAP_URL,
     areaServed: BUSINESS.address.city,
     openingHoursSpecification: BUSINESS.openingHours.map((h) => ({
