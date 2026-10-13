@@ -589,6 +589,7 @@ export const EN: Dict = {
     hours: 'Opening hours',
     closed: 'Sunday — closed',
     mapTitle: 'Tonirovka.md studio map',
+    mapOpen: 'Open in Google Maps',
   },
   booking: {
     title: 'Book online',

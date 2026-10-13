@@ -595,6 +595,7 @@ export const RO: Dict = {
     hours: 'Program',
     closed: 'Duminică — zi liberă',
     mapTitle: 'Harta studioului Tonirovka.md',
+    mapOpen: 'Deschide în Google Maps',
   },
   booking: {
     title: 'Programare online',
