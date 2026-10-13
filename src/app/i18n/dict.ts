@@ -118,6 +118,7 @@ export interface Dict {
     hours: string;
     closed: string;
     mapTitle: string;
+    mapOpen: string;
   };
   booking: {
     title: string;

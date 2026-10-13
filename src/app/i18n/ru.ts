@@ -591,6 +591,7 @@ export const RU: Dict = {
     hours: 'График работы',
     closed: 'Воскресенье — выходной',
     mapTitle: 'Карта студии Tonirovka.md',
+    mapOpen: 'Открыть в Google Maps',
   },
   booking: {
     title: 'Онлайн запись',

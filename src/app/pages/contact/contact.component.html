@@ -91,13 +91,29 @@
       data-testid="contact-map"
       class="relative min-h-[360px] overflow-hidden rounded-2xl border border-ink-700 bg-ink-900"
     >
+      <!-- The map is a static picture: no dragging or zooming. A click opens Google Maps. -->
       <iframe
         [src]="mapEmbed"
         [title]="c.mapTitle"
-        class="h-full min-h-[360px] w-full grayscale invert-[0.92] hue-rotate-180"
+        class="pointer-events-none h-full min-h-[360px] w-full grayscale invert-[0.92] hue-rotate-180"
         loading="lazy"
+        tabindex="-1"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
+      <a
+        [href]="mapLink"
+        target="_blank"
+        rel="noopener"
+        class="group absolute inset-0 flex items-start justify-start p-4"
+        [attr.aria-label]="c.mapOpen"
+        data-testid="contact-map-link"
+      >
+        <span
+          class="flex items-center gap-2 rounded-full bg-ink-950/85 px-4 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur transition group-hover:bg-brand-600"
+        >
+          <app-icon name="pin" [size]="16" />{{ c.mapOpen }}
+        </span>
+      </a>
       <!-- Our logo as the map pin: the map is centred on the studio, so the tip marks it. -->
       <div
         class="pointer-events-none absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-full flex-col items-center drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]"
