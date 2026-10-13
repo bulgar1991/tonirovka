@@ -8,11 +8,14 @@ Replace them with photos of your own work; keep the file names or update src/app
 - tinting/2.jpg — https://unsplash.com/photos/JTR_n83ggA4
 - tinting/3.jpg — https://unsplash.com/photos/VK7VtsqbKrs
 - tinting/4.jpg — https://unsplash.com/photos/vTMLN0Ga56E
-- buildings/hero.jpg — https://unsplash.com/photos/Wm8opOd-MDE
-- buildings/1.jpg — https://unsplash.com/photos/T0iFfJw-rB0
-- buildings/2.jpg — https://unsplash.com/photos/gMes5dNykus
-- buildings/3.jpg — https://unsplash.com/photos/aK0EmfPuktA
-- buildings/4.jpg — https://unsplash.com/photos/nHdTXaUSbM8
+- buildings/hero.jpg, card.jpg — https://unsplash.com/photos/gvCLog5Yv00
+- buildings/compare.jpg — https://unsplash.com/photos/Q8WL__F1Wis
+- buildings/1.jpg — https://unsplash.com/photos/-2Khf-1qoCA
+- buildings/2.jpg — https://unsplash.com/photos/wlHBYkK2y4k
+- buildings/3.jpg — https://unsplash.com/photos/E8BU1IOE7tY
+- buildings/4.jpg — https://unsplash.com/photos/i-u7NO9E8y0
+- buildings/5.jpg — https://unsplash.com/photos/gr31TQT5ETs
+- buildings/6.jpg — https://unsplash.com/photos/IMfaCeetSjc
 - headlights/hero.jpg — https://unsplash.com/photos/oqw8zg1wC78
 - headlights/1.jpg — https://unsplash.com/photos/w8RT-3E61Ys
 - headlights/2.jpg — https://unsplash.com/photos/zSJ5DiS9e7o

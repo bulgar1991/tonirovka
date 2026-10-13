@@ -47,6 +47,13 @@
           <app-tint-picker class="mt-4 block" />
         </div>
       }
+      @if (media().compare; as compare) {
+        <div class="card mt-10 p-5 sm:p-8" data-testid="service-glass-compare">
+          <h2 class="font-display text-lg font-bold sm:text-xl">{{ t.glass.title }}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-ink-400">{{ t.glass.text }}</p>
+          <app-glass-compare class="mt-5" [photo]="compare" />
+        </div>
+      }
     </div>
 
     <aside class="lg:sticky lg:top-28 lg:self-start" data-testid="service-benefits">
@@ -65,7 +72,7 @@
           }
         </ul>
         <p class="mt-6 border-t border-ink-700 pt-5 text-xs text-ink-400">
-          {{ t.service.priceNote }}
+          {{ s.priceNote ?? t.service.priceNote }}
         </p>
         <a
           [routerLink]="i18n.link('services')"

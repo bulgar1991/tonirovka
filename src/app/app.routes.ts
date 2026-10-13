@@ -60,7 +60,7 @@ function pageRoutes(lang: Lang): Routes {
     },
     {
       // /404 is prerendered and copied to /404.html, which Vercel serves for unknown URLs
-      // (see scripts/postbuild.mjs). Romanian also catches every unknown URL in the browser.
+      // (see scripts/seo-pages.ts). Romanian also catches every unknown URL in the browser.
       path: '404',
       loadComponent: notFound,
       resolve: { seo: seoResolver },
