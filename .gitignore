@@ -46,3 +46,6 @@ Thumbs.db
 # Web copies of the service photos, made by scripts/optimize-images.mjs
 /src/assets/images/services/*/*.webp
 /src/assets/images/services/*/og.jpg
+
+# Web app manifests per language, made by scripts/manifests.ts
+/src/site*.webmanifest

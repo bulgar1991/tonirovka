@@ -144,6 +144,28 @@ export const RO: Dict = {
       70: 'Aproape transparent — protecție termică fără schimbarea aspectului.',
     },
   },
+  glass: {
+    title: 'Vezi diferența pe geam',
+    text: 'Trage linia spre stânga sau spre dreapta: în stânga e geamul fără folie, în dreapta — cu folia aleasă.',
+    label: 'Tipul foliei',
+    hint: 'Trage linia stânga–dreapta',
+    before: 'Fără folie',
+    alt: 'Fereastră panoramică de birou cu vedere spre oraș',
+    films: {
+      solar: {
+        name: 'Solară',
+        text: 'Reduce căldura și orbirea, păstrează vederea clară și lumina naturală.',
+      },
+      mirror: {
+        name: 'Oglindă',
+        text: 'Reflectă până la 80% din energia solară; ziua, din exterior, nu se vede înăuntru.',
+      },
+      matte: {
+        name: 'Mată',
+        text: 'Lasă lumina să treacă, dar ascunde ce e în spatele sticlei — pentru birouri și băi.',
+      },
+    },
+  },
   films: {
     names: { standard: 'Standard', ceramic: 'Ceramică' },
     texts: {
@@ -210,17 +232,45 @@ export const RO: Dict = {
         'Folia arhitecturală reduce căldura din încăpere, protejează mobilierul de decolorare și ascunde interiorul de privirile din stradă — fără a schimba geamurile.',
       body: [
         'Aplicăm folii de protecție solară, oglindă, mate și decorative pe geamurile apartamentelor și caselor, pereții de sticlă din birouri, vitrine și fațade.',
-        'Venim la măsurare, alegem folia potrivită și calculăm prețul după suprafața vitrată. Montajul se face curat, fără demontarea geamurilor.',
+        'Folia de protecție solară reduce căldura și orbirea, dar păstrează vederea clară și lumina naturală. Folia oglindă reflectă până la 80% din energia solară, iar ziua, din exterior, geamul arată ca o oglindă — nimeni nu vede înăuntru.',
+        'Folia mată lasă lumina să treacă, dar ascunde ce se află în spatele sticlei: ideală pentru pereții de sticlă din birouri, sălile de ședințe, uși și geamurile de la baie. Pe vitrine aplicăm și folii decorative, benzi și logo decupat.',
+        'Folia de siguranță, mai groasă, ține sticla întreagă la lovitură și îngreunează spargerea geamului — potrivită pentru vitrine și apartamente de la parter.',
+        'Venim la măsurare, îți arătăm mostre direct pe geamul tău și calculăm prețul după suprafața vitrată. Montajul se face curat, fără demontarea geamurilor: o echipă tonează 20–40 m² pe zi.',
+        'Geamurile se pot spăla după 30 de zile, cu o lavetă moale și detergent fără particule abrazive.',
       ],
       benefits: [
         'Mai puțină căldură vara și costuri mai mici cu aerul condiționat',
-        'Mobila și podeaua nu se decolorează',
+        'Blochează până la 99% din radiația UV — mobila și podeaua nu se decolorează',
+        'Mai puțină orbire pe monitoare și ecrane',
         'Intimitate ziua — din exterior nu se vede înăuntru',
         'Sticla ține cioburile la impact',
+        'Fără schimbarea geamurilor, iar folia se poate scoate oricând',
       ],
       duration: 'de la 1 zi',
       priceFrom: null,
-      faq: [],
+      priceNote: 'Prețul final depinde de tipul foliei și de suprafața vitrată.',
+      faq: [
+        {
+          q: 'Se vede prin folia oglindă seara?',
+          a: 'Da. Folia oglindă ascunde partea mai întunecată: ziua nu se vede înăuntru, dar seara, cu lumina aprinsă în cameră, interiorul se vede din exterior. Pentru intimitate și seara recomandăm folie mată sau jaluzele.',
+        },
+        {
+          q: 'Folia face camera prea întunecată?',
+          a: 'Nu neapărat. Pentru locuințe recomandăm folii de protecție solară deschise, care opresc căldura, dar lasă să treacă 50–70% din lumină. Îți arătăm mostre pe geamul tău înainte de montaj.',
+        },
+        {
+          q: 'Se poate aplica pe geamuri termopan?',
+          a: 'Da, aplicăm folia pe partea interioară a geamului termopan. Pentru geamuri mari și folii închise la culoare verificăm compatibilitatea, ca sticla să nu se supraîncălzească.',
+        },
+        {
+          q: 'Cum se calculează prețul?',
+          a: 'Prețul depinde de tipul foliei și de suprafața vitrată, în m². Venim la măsurare, alegem împreună folia și primești un preț exact înainte de montaj.',
+        },
+        {
+          q: 'Folia se poate scoate?',
+          a: 'Da. Folia se îndepărtează fără a deteriora sticla, iar adezivul rămas se curăță. O poți înlocui oricând cu alt tip de folie.',
+        },
+      ],
     },
     headlights: {
       name: 'Folie pe faruri',
@@ -548,7 +598,7 @@ export const RO: Dict = {
   },
   booking: {
     title: 'Programare online',
-    text: 'Completează formularul — mesajul se deschide în WhatsApp sau Telegram, gata de trimis.',
+    text: 'Completează formularul și te sunăm pentru confirmare. Poți scrie și direct pe Viber, WhatsApp sau Telegram.',
     name: 'Nume',
     phone: 'Telefon',
     car: 'Mașina',
@@ -556,12 +606,21 @@ export const RO: Dict = {
     service: 'Serviciu',
     date: 'Data dorită',
     comment: 'Comentariu',
-    sendWhatsapp: 'Trimite prin WhatsApp',
-    sendTelegram: 'Trimite prin Telegram',
+    send: 'Trimite cererea',
+    sending: 'Se trimite…',
+    sentTitle: 'Mulțumim!',
+    sent: 'Cererea ta a fost trimisă. Te sunăm în curând pentru a confirma ziua și ora programării.',
+    again: 'Trimite încă o cerere',
+    nameError: 'Introdu numele',
+    phoneError: 'Introdu un număr de telefon valid',
+    commentPlaceholder: 'Ce trebuie făcut, ce folie sau nivel de tonare dorești, întrebări…',
+    error: 'Cererea nu a putut fi trimisă. Încearcă din nou sau scrie-ne pe WhatsApp.',
+    orMessenger: 'sau scrie-ne direct',
+    subject: 'Programare nouă de pe site',
+    sendVia: 'Trimite prin',
     note: 'Răspundem de obicei în 15 minute în timpul programului.',
     greeting: 'Bună ziua! Aș dori o programare.',
-    copied: 'Mesajul a fost copiat — lipește-l în chatul Telegram.',
-    required: 'Completează numele și telefonul',
+    copied: 'Mesajul a fost copiat — lipește-l în chat.',
   },
   notFound: {
     h1: 'Pagina nu a fost găsită',

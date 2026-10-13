@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { BookingFormComponent } from '@components/booking-form/booking-form.component';
 import { FaqListComponent } from '@components/faq-list/faq-list.component';
 import { FilmsTableComponent } from '@components/films-table/films-table.component';
+import { GlassCompareComponent } from '@components/glass-compare/glass-compare.component';
 import { HeroEffectComponent } from '@components/hero-effect/hero-effect.component';
 import { ScrollToDirective } from '@directives/scroll-to.directive';
 import { IconComponent } from '@components/icon/icon.component';
@@ -22,6 +23,7 @@ import { LanguageService } from '@services/language.service';
     IconComponent,
     PageHeaderComponent,
     TintPickerComponent,
+    GlassCompareComponent,
     FilmsTableComponent,
     HeroEffectComponent,
     PhotoGalleryComponent,

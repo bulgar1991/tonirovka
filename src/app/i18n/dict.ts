@@ -1,4 +1,4 @@
-import { FilmId } from '@/config/films';
+import { FilmId, GlassFilm } from '@/config/films';
 import { PageKey, ServiceId } from '@/config/routes';
 
 export interface Seo {
@@ -20,6 +20,8 @@ export interface ServiceContent {
   /** What the price is for, shown after it, e.g. "per panel". */
   priceUnit?: string;
   faq: { q: string; a: string }[];
+  /** Replaces the general price note under the benefits (which talks about car models). */
+  priceNote?: string;
 }
 
 export interface Dict {
@@ -69,6 +71,16 @@ export interface Dict {
     hint: string;
     levels: Record<number, string>;
   };
+  /** Before / after slider on the building film page. */
+  glass: {
+    title: string;
+    text: string;
+    label: string;
+    hint: string;
+    before: string;
+    alt: string;
+    films: Record<GlassFilm, { name: string; text: string }>;
+  };
   films: {
     names: Record<FilmId, string>;
     texts: Record<FilmId, string>;
@@ -117,11 +129,22 @@ export interface Dict {
     service: string;
     date: string;
     comment: string;
-    sendWhatsapp: string;
-    sendTelegram: string;
+    send: string;
+    sending: string;
+    sentTitle: string;
+    sent: string;
+    again: string;
+    nameError: string;
+    phoneError: string;
+    commentPlaceholder: string;
+    error: string;
+    orMessenger: string;
+    /** Email subject of a request (the email always uses the Romanian labels). */
+    subject: string;
+    /** "Send via" + messenger name, for the icon buttons. */
+    sendVia: string;
     note: string;
     greeting: string;
-    required: string;
     copied: string;
   };
   notFound: { h1: string; text: string; back: string };

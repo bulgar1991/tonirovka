@@ -1,116 +1,192 @@
 @let t = i18n.t();
 @let b = t.booking;
-<form
-  class="grid gap-4 sm:grid-cols-2"
-  data-testid="booking-form"
-  novalidate
-  (submit)="$event.preventDefault(); send('whatsapp')"
->
-  <label class="block">
-    <span class="label">{{ b.name }} <span class="text-brand-400">*</span></span>
-    <input
-      class="field"
-      type="text"
-      name="name"
-      data-testid="booking-name"
-      autocomplete="name"
-      required
-      [value]="name()"
-      (input)="name.set(value($event))"
-      [attr.aria-invalid]="submitted() && !nameValid()"
-    />
-  </label>
-  <label class="block">
-    <span class="label">{{ b.phone }} <span class="text-brand-400">*</span></span>
-    <input
-      class="field"
-      type="tel"
-      name="phone"
-      data-testid="booking-phone"
-      autocomplete="tel"
-      inputmode="tel"
-      required
-      [value]="phone()"
-      (input)="phone.set(value($event))"
-      [attr.aria-invalid]="submitted() && !phoneValid()"
-    />
-  </label>
-  <label class="block">
-    <span class="label">{{ b.car }}</span>
-    <input
-      class="field"
-      type="text"
-      name="car"
-      data-testid="booking-car"
-      [placeholder]="b.carPlaceholder"
-      [value]="car()"
-      (input)="car.set(value($event))"
-    />
-  </label>
-  <label class="block">
-    <span class="label">{{ b.service }}</span>
-    <select
-      class="field"
-      name="service"
-      data-testid="booking-service"
-      (change)="selected.set($any(value($event)))"
+@if (status() === 'sent') {
+  <div class="animate-fade-up py-6 text-center sm:py-10" data-testid="booking-success">
+    <span
+      class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-600 text-white shadow-[0_0_40px_rgba(225,29,42,0.5)]"
     >
-      <option value="" [selected]="!selected()">—</option>
-      @for (id of services; track id) {
-        <option [value]="id" [selected]="selected() === id">{{ t.services[id].name }}</option>
-      }
-    </select>
-  </label>
-  <label class="block">
-    <span class="label">{{ b.date }}</span>
-    <input
-      class="field [color-scheme:dark]"
-      type="date"
-      name="date"
-      data-testid="booking-date"
-      [min]="today"
-      [value]="date()"
-      (input)="date.set(value($event))"
-    />
-  </label>
-  <label class="block">
-    <span class="label">{{ b.comment }}</span>
-    <input
-      class="field"
-      type="text"
-      name="comment"
-      data-testid="booking-comment"
-      [value]="comment()"
-      (input)="comment.set(value($event))"
-    />
-  </label>
-
-  <div class="flex flex-col gap-3 pt-2 sm:col-span-2 sm:flex-row">
-    <button type="submit" class="btn btn-primary flex-1" data-testid="booking-send-whatsapp">
-      <app-icon name="chat" [size]="18" />{{ b.sendWhatsapp }}
-    </button>
+      <app-icon name="check" [size]="32" [stroke]="3" />
+    </span>
+    <h3
+      #thanks
+      tabindex="-1"
+      class="mt-6 bg-gradient-to-r from-brand-400 to-brand-700 bg-clip-text font-display text-3xl font-bold text-transparent focus:outline-none sm:text-4xl"
+    >
+      {{ b.sentTitle }}
+    </h3>
+    <p class="mx-auto mt-3 max-w-md leading-relaxed text-ink-300">{{ b.sent }}</p>
     <button
       type="button"
-      class="btn btn-ghost flex-1"
-      data-testid="booking-send-telegram"
-      (click)="send('telegram')"
+      class="btn btn-ghost mt-8"
+      data-testid="booking-again"
+      (click)="status.set('idle')"
     >
-      <app-icon name="send" [size]="18" />{{ b.sendTelegram }}
+      {{ b.again }}
     </button>
   </div>
-
-  <p
-    class="text-sm sm:col-span-2"
-    aria-live="polite"
-    data-testid="booking-status"
-    [class]="submitted() && !valid() ? 'text-brand-400' : 'text-ink-400'"
+} @else {
+  <form
+    class="grid gap-4 sm:grid-cols-2"
+    data-testid="booking-form"
+    novalidate
+    (submit)="$event.preventDefault(); submit()"
   >
-    @if (submitted() && !valid()) {
-      {{ b.required }}
-    } @else if (copied()) {
-      {{ b.copied }}
-    } @else {
-      {{ b.note }}
-    }
-  </p>
-</form>
+    <label class="block">
+      <span class="label">{{ b.name }} <span class="text-brand-400">*</span></span>
+      <input
+        class="field"
+        type="text"
+        name="name"
+        data-testid="booking-name"
+        autocomplete="name"
+        required
+        maxlength="80"
+        [value]="name()"
+        (input)="name.set(value($event))"
+        [attr.aria-invalid]="submitted() && !nameValid()"
+      />
+      @if (submitted() && !nameValid()) {
+        <span class="mt-1.5 block text-sm text-brand-400" data-testid="booking-name-error">{{
+          b.nameError
+        }}</span>
+      }
+    </label>
+    <label class="block">
+      <span class="label">{{ b.phone }} <span class="text-brand-400">*</span></span>
+      <input
+        class="field"
+        type="tel"
+        name="phone"
+        data-testid="booking-phone"
+        autocomplete="tel"
+        inputmode="tel"
+        required
+        maxlength="30"
+        [value]="phone()"
+        (input)="phone.set(value($event))"
+        [attr.aria-invalid]="submitted() && !phoneValid()"
+      />
+      @if (submitted() && !phoneValid()) {
+        <span class="mt-1.5 block text-sm text-brand-400" data-testid="booking-phone-error">{{
+          b.phoneError
+        }}</span>
+      }
+    </label>
+    <label class="block">
+      <span class="label">{{ b.car }}</span>
+      <input
+        class="field"
+        type="text"
+        name="car"
+        data-testid="booking-car"
+        maxlength="80"
+        [placeholder]="b.carPlaceholder"
+        [value]="car()"
+        (input)="car.set(value($event))"
+      />
+    </label>
+    <label class="block">
+      <span class="label">{{ b.date }}</span>
+      <input
+        class="field [color-scheme:dark]"
+        type="date"
+        name="date"
+        data-testid="booking-date"
+        [min]="today"
+        [value]="date()"
+        (input)="date.set(value($event))"
+      />
+    </label>
+    <label class="block sm:col-span-2">
+      <span class="label">{{ b.service }}</span>
+      <select
+        class="field"
+        name="service"
+        data-testid="booking-service"
+        (change)="selected.set($any(value($event)))"
+      >
+        <option value="" [selected]="!selected()">—</option>
+        @for (id of services; track id) {
+          <option [value]="id" [selected]="selected() === id">{{ t.services[id].name }}</option>
+        }
+      </select>
+    </label>
+    <label class="block sm:col-span-2">
+      <span class="label">{{ b.comment }}</span>
+      <textarea
+        class="field min-h-36 resize-y"
+        name="comment"
+        data-testid="booking-comment"
+        rows="5"
+        maxlength="2000"
+        [placeholder]="b.commentPlaceholder"
+        [value]="comment()"
+        (input)="comment.set(value($event))"
+      ></textarea>
+    </label>
+
+    <!-- Honeypot for spam bots: hidden from people and screen readers. -->
+    <input
+      type="checkbox"
+      name="botcheck"
+      class="hidden"
+      tabindex="-1"
+      autocomplete="off"
+      aria-hidden="true"
+      [checked]="botcheck()"
+      (change)="botcheck.set($any($event.target).checked)"
+    />
+
+    <div class="pt-2 sm:col-span-2">
+      <button
+        type="submit"
+        class="btn btn-primary w-full disabled:cursor-wait disabled:opacity-70"
+        data-testid="booking-submit"
+        [disabled]="status() === 'sending'"
+      >
+        @if (status() === 'sending') {
+          <span
+            class="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
+            aria-hidden="true"
+          ></span
+          >{{ b.sending }}
+        } @else {
+          <app-icon name="send" [size]="18" />{{ b.send }}
+        }
+      </button>
+      <p class="mt-4 text-center text-xs uppercase tracking-widest text-ink-400">
+        {{ b.orMessenger }}
+      </p>
+      <div class="mt-3 flex justify-center gap-4">
+        @for (m of messengers; track m.id) {
+          <button
+            type="button"
+            class="grid h-14 w-14 place-items-center rounded-full text-white shadow-lg transition hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
+            [style.background-color]="m.color"
+            [attr.aria-label]="b.sendVia + ' ' + m.name"
+            [title]="m.name"
+            [attr.data-testid]="'booking-send-' + m.id"
+            (click)="send(m.id)"
+          >
+            <app-brand-icon [name]="m.id" [size]="28" />
+          </button>
+        }
+      </div>
+    </div>
+
+    <p
+      class="text-sm sm:col-span-2"
+      aria-live="polite"
+      data-testid="booking-status"
+      [class]="status() === 'error' ? 'text-brand-400' : 'text-ink-400'"
+    >
+      @if (status() === 'error') {
+        {{ b.error }}
+      } @else if (copied()) {
+        {{ b.copied }}
+      } @else {
+        {{ b.note }}
+      }
+    </p>
+  </form>
+}

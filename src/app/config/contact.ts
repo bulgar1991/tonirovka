@@ -13,3 +13,15 @@ export const WHATSAPP_URL = 'https://wa.me/' + WHATSAPP_NUMBER;
 
 // Telegram chat by phone number (replace with https://t.me/<username> if there is one).
 export const TELEGRAM_URL = 'https://t.me/+' + WHATSAPP_NUMBER;
+
+// Viber chat by phone number. Opens the Viber app (a viber:// link, not a web page).
+export const VIBER_URL = 'viber://chat?number=%2B' + WHATSAPP_NUMBER;
+
+export type MessengerId = 'viber' | 'whatsapp' | 'telegram';
+
+// Messenger buttons (booking form, contact page), in this order, with each brand's colour.
+export const MESSENGERS: { id: MessengerId; name: string; url: string; color: string }[] = [
+  { id: 'viber', name: 'Viber', url: VIBER_URL, color: '#7360f2' },
+  { id: 'whatsapp', name: 'WhatsApp', url: WHATSAPP_URL, color: '#25d366' },
+  { id: 'telegram', name: 'Telegram', url: TELEGRAM_URL, color: '#229ed9' },
+];

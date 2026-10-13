@@ -17,6 +17,8 @@ export interface ServiceMedia {
   card: string;
   /** Photos shown in the service page gallery. */
   gallery: Photo[];
+  /** Window photo for the before / after film slider (compare.jpg), 1600 wide and 800 wide. */
+  compare?: { src: string; small: string };
   /** Animated background over the hero. */
   effect?: 'stars' | 'ambient';
 }
@@ -42,7 +44,13 @@ const media = (id: ServiceId, count: number, effect?: ServiceMedia['effect']): S
 
 export const SERVICE_MEDIA: Record<ServiceId, ServiceMedia> = {
   tinting: media('tinting', 4),
-  buildings: media('buildings', 4),
+  buildings: {
+    ...media('buildings', 6),
+    compare: {
+      src: 'assets/images/services/buildings/compare.webp',
+      small: 'assets/images/services/buildings/compare-800.webp',
+    },
+  },
   headlights: media('headlights', 4),
   wrap: media('wrap', 4),
   polishing: media('polishing', 4),

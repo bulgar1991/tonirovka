@@ -36,12 +36,12 @@ service. To change a photo, replace the JPG; the copies are rebuilt on the next 
 - `seoResolver` / `serviceSeoResolver` set title, description, canonical, hreflang, Open Graph and
   JSON-LD (AutoRepair, WebSite, WebPage, Service, BreadcrumbList, FAQPage) on every navigation.
   Service pages share their own photo (`og.jpg`); other pages use the default share image.
-- After `ng build`, `scripts/postbuild.mjs` runs `scripts/seo-pages.ts`, which writes an
+- After `ng build`, `scripts/run-ts.mjs` runs `scripts/seo-pages.ts`, which writes an
   `index.html` per URL with the same tags and the page heading already in the HTML, plus
   `404.html`, `sitemap.xml` (with hreflang and service photos) and `robots.txt`. Service pages
   also preload their header photo (the largest paint).
 - The web app manifest is generated per language (`site.webmanifest`, `site-ru.webmanifest`,
-  `site-en.webmanifest`); `src/site.webmanifest` is only the dev-server copy. App icons are made
+  `site-en.webmanifest`), written into `src/` by `scripts/manifests.ts` before start / build. App icons are made
   from the round logo (`src/assets/images/logo/logo.svg`).
 - `vercel.json` sets security headers and caching: hashed JS/CSS for a year, `assets/` for a week.
 - Elements tests rely on carry a `data-testid` (`page-title`, `booking-form`, `service-card-<id>`, …).

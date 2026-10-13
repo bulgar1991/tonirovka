@@ -3,6 +3,7 @@
 //   hero.jpg -> hero.webp (1600 wide), hero-800.webp (phones), og.jpg (1200×630 social preview)
 //   card.jpg -> card.webp
 //   1.jpg …  -> 1.webp (lightbox, 1200 wide), 1-600.webp (grid thumbnail)
+//   other    -> <name>.webp (1600 wide), <name>-800.webp (e.g. compare.jpg for the film slider)
 // Copies are skipped when they are newer than their JPG. They are ignored by git (.gitignore).
 import { readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
@@ -28,7 +29,10 @@ const outputs = (name) => {
       [`${base}.webp`, (img) => img.resize({ width: 1200, withoutEnlargement: true }).webp(WEBP)],
       [`${base}-600.webp`, (img) => img.resize({ width: 600 }).webp(WEBP)],
     ];
-  return [];
+  return [
+    [`${base}.webp`, (img) => img.resize({ width: 1600, withoutEnlargement: true }).webp(WEBP)],
+    [`${base}-800.webp`, (img) => img.resize({ width: 800 }).webp(WEBP)],
+  ];
 };
 
 const mtime = (file) => {
