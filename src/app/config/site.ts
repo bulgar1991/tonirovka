@@ -35,7 +35,6 @@ export const BUSINESS = {
   currency: 'EUR',
   foundedYear: 2003,
   carsDone: 3500,
-  warrantyYears: 10,
 };
 
 // Exact location of the studio (from its Google Maps listing) - the box number can't be geocoded.

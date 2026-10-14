@@ -36,7 +36,6 @@ export class HomeComponent {
     return [
       { value: `${new Date().getFullYear() - BUSINESS.foundedYear}+`, label: s.years },
       { value: `${BUSINESS.carsDone}+`, label: s.cars },
-      { value: String(BUSINESS.warrantyYears), label: s.warranty },
     ];
   });
 }

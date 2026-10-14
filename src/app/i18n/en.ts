@@ -19,7 +19,6 @@ export const EN: Dict = {
     bookNow: 'Book now',
     learnMore: 'Details',
     allServices: 'All services',
-    duration: 'Duration',
     skipToContent: 'Skip to content',
     language: 'Language',
     writeUs: 'Message us',
@@ -33,7 +32,7 @@ export const EN: Dict = {
     home: {
       title: 'Car Tinting & Detailing in Chișinău | Tonirovka.md',
       description:
-        'Window tinting, car wrapping, headlight film, polishing, interior cleaning, starlight headliners and ambient lighting in Chișinău. Up to 10-year warranty.',
+        'Window tinting, car wrapping, headlight film, polishing, interior cleaning, starlight headliners and ambient lighting in Chișinău.',
     },
     services: {
       title: 'Car Tinting & Detailing Services in Chișinău | Tonirovka.md',
@@ -48,7 +47,7 @@ export const EN: Dict = {
     faq: {
       title: 'Car Window Tinting FAQ | Tonirovka.md',
       description:
-        'How long tinting takes, when you can roll your windows down, which film to choose and how to care for it. Answers from Tonirovka.md experts.',
+        'When you can roll your windows down, which film to choose and how to care for it. Answers from Tonirovka.md experts.',
     },
     contacts: {
       title: 'Contact & Booking — Car Tinting Chișinău | Tonirovka.md',
@@ -64,10 +63,10 @@ export const EN: Dict = {
     badge: 'Tinting & detailing in Chișinău',
     title: 'Car window tinting',
     titleAccent: 'without compromise',
-    text: 'Premium films installed in a dust-free bay — no bubbles, no specks. Plus wraps, polishing, interior cleaning and cabin upgrades, all in one studio with a written warranty.',
+    text: 'Premium films installed in a dust-free bay — no bubbles, no specks. Plus wraps, polishing, interior cleaning and cabin upgrades, all in one studio.',
     ctaPrimary: 'Book now',
     ctaSecondary: 'All services',
-    stats: { years: 'years of experience', cars: 'cars tinted', warranty: 'year warranty' },
+    stats: { years: 'years of experience', cars: 'cars tinted' },
     tintTitle: 'Choose your tint level',
     tintText:
       'Move the slider to see how the car looks. The percentage is how much light passes through the glass: the lower it is, the darker the window.',
@@ -94,13 +93,13 @@ export const EN: Dict = {
       },
       {
         icon: 'shield',
-        title: 'Written warranty',
-        text: 'Up to 10 years of warranty on film and installation. Any defect is fixed free of charge.',
+        title: 'Careful work',
+        text: 'We protect the seals, trim and electronics while we work and hand the car back clean.',
       },
       {
-        icon: 'clock',
-        title: 'Same day',
-        text: 'A full tint takes 2–4 hours. Drop the car off in the morning, pick it up in the afternoon.',
+        icon: 'tinting',
+        title: 'All in one studio',
+        text: 'Tint, wraps, polishing, interior cleaning and cabin upgrades — one booking, one place.',
       },
       {
         icon: 'chat',
@@ -121,7 +120,7 @@ export const EN: Dict = {
       },
       {
         title: 'Handover',
-        text: 'We inspect every window and give you the warranty and care tips.',
+        text: 'We inspect every window and give you care tips.',
       },
     ],
     filmsTitle: 'Which film to choose',
@@ -172,7 +171,6 @@ export const EN: Dict = {
       { label: 'Heat rejection', values: ['up to 30%', 'up to 70%'] },
       { label: 'Fade-proof', values: ['—', '✓'] },
       { label: 'No GPS/GSM interference', values: ['✓', '✓'] },
-      { label: 'Warranty', values: ['3 years', '10 years'] },
     ],
     popular: 'Popular',
   },
@@ -183,7 +181,7 @@ export const EN: Dict = {
       seo: {
         title: 'Car Window Tinting in Chișinău — from €60 | Tonirovka.md',
         description:
-          'Car window tinting with standard and ceramic film from 5% to 70%. Dust-free install, no bubbles, up to 10-year warranty. Quick booking.',
+          'Car window tinting with standard and ceramic film from 5% to 70%. Dust-free install, no bubbles. Quick booking.',
       },
       h1: 'Car window tinting',
       intro:
@@ -200,7 +198,6 @@ export const EN: Dict = {
         'Holds the glass together if it breaks',
         'Reduces glare from the sun and headlights behind you',
       ],
-      duration: '2–4 hours',
       priceFrom: 60,
       faq: [
         {
@@ -229,7 +226,7 @@ export const EN: Dict = {
         'Solar control film cuts heat and glare while keeping a clear view and natural light. Mirror film reflects up to 80% of solar energy, and in daylight the glass looks like a mirror from outside — nobody can see in.',
         'Frosted film lets light through but hides what is behind the glass: ideal for office glass walls, meeting rooms, doors and bathroom windows. On shopfronts we also apply decorative film, stripes and cut-out logos.',
         'Thicker safety film holds the glass together on impact and makes a break-in harder — a good fit for shopfronts and ground-floor apartments.',
-        'We come to measure, show you samples right on your window and price the job by glass area. Installation is clean and needs no window removal: one crew covers 20–40 m² a day.',
+        'We come to measure, show you samples right on your window and price the job by glass area. Installation is clean and needs no window removal.',
         'Windows can be washed after 30 days, with a soft cloth and a non-abrasive cleaner.',
       ],
       benefits: [
@@ -240,7 +237,6 @@ export const EN: Dict = {
         'Glass holds together on impact',
         'No window replacement, and the film can be removed at any time',
       ],
-      duration: 'from 1 day',
       priceFrom: null,
       priceNote: 'The final price depends on the film type and the glass area.',
       faq: [
@@ -287,7 +283,6 @@ export const EN: Dict = {
         'Sporty look with smoked film',
         'Removes without residue',
       ],
-      duration: '1–2 hours',
       priceFrom: 100,
       faq: [],
     },
@@ -312,7 +307,6 @@ export const EN: Dict = {
         'Keeps resale value up',
         'Removes without harming the paint',
       ],
-      duration: 'from 1 day',
       priceFrom: 300,
       priceUnit: 'per panel',
       faq: [],
@@ -338,7 +332,6 @@ export const EN: Dict = {
         'Safe — we measure paint thickness',
         'Perfect prep before selling',
       ],
-      duration: '1–2 days',
       priceFrom: 200,
       faq: [],
     },
@@ -363,7 +356,6 @@ export const EN: Dict = {
         'Gentle care for leather and Alcantara',
         'Dry interior at handover',
       ],
-      duration: '4–8 hours',
       priceFrom: 100,
       faq: [],
     },
@@ -380,15 +372,14 @@ export const EN: Dict = {
         'Dry fog gets into the upholstery, headliner and air ducts and breaks down odour molecules instead of masking them.',
       body: [
         'A fogger turns the neutralising liquid into ultra-fine particles that fill the whole cabin, including the ventilation system, without leaving moisture.',
-        'It takes about half an hour, and after airing only a light neutral scent remains. A perfect add-on to interior cleaning.',
+        'After airing only a light neutral scent remains. A perfect add-on to interior cleaning.',
       ],
       benefits: [
         'Removes smoke, pet and damp smells',
         'Reaches vents and upholstery',
         'No moisture or streaks',
-        'About 30 minutes',
+        'Leaves no moisture or residue',
       ],
-      duration: '30–40 minutes',
       priceFrom: 20,
       faq: [],
     },
@@ -413,7 +404,6 @@ export const EN: Dict = {
         'Matching pillars and visors',
         'Pairs with a starlight headliner',
       ],
-      duration: '1–2 days',
       priceFrom: 250,
       faq: [],
     },
@@ -438,7 +428,6 @@ export const EN: Dict = {
         'Hidden, tidy wiring',
         'A premium-cabin feel',
       ],
-      duration: '1 day',
       priceFrom: 300,
       faq: [],
     },
@@ -463,7 +452,6 @@ export const EN: Dict = {
         'Colour changes from your phone',
         'Fibre optics stay cool',
       ],
-      duration: '1–2 days',
       priceFrom: 400,
       faq: [],
     },
@@ -485,10 +473,9 @@ export const EN: Dict = {
       benefits: [
         'Leak test before recharging',
         'Exact factory-spec amount',
-        'Cold air within 30–60 minutes',
+        'Cold air in the cabin again',
         'Antibacterial treatment on request',
       ],
-      duration: '30–60 minutes',
       priceFrom: 40,
       faq: [],
     },
@@ -513,7 +500,6 @@ export const EN: Dict = {
         'Clean in a minute',
         'Your choice of colours',
       ],
-      duration: '1–3 days',
       priceFrom: 50,
       faq: [],
     },
@@ -547,10 +533,6 @@ export const EN: Dict = {
     intro: 'Answers to the questions our customers ask most often.',
     items: [
       {
-        q: 'How long does a full car tint take?',
-        a: 'Usually 2–4 hours depending on the model and number of windows. A sun strip takes about 30 minutes.',
-      },
-      {
         q: 'How long before I can roll my windows down?',
         a: '3–5 days. That is how long the adhesive needs to fully cure. In cold weather it may take a little longer.',
       },
@@ -563,20 +545,12 @@ export const EN: Dict = {
         a: 'Both block 99% of UV. Ceramic rejects significantly more heat, offers better clarity and never fades, but costs more.',
       },
       {
-        q: 'What warranty do you offer?',
-        a: 'Depending on the film — from 3 to 10 years. It covers fading, peeling and bubbling.',
-      },
-      {
         q: 'How do I care for tinted windows?',
         a: 'Clean with a soft microfibre cloth and ammonia-free cleaners. Avoid abrasives and scrapers on the inside.',
       },
       {
         q: 'Does tint affect the rear defroster?',
         a: 'No. The film goes over the defroster lines and does not affect them. When removing tint we work carefully to keep them intact.',
-      },
-      {
-        q: 'Do I need to leave the car all day?',
-        a: 'No. Most jobs are done in a few hours. Wait in our lounge or we will let you know when the car is ready.',
       },
     ],
   },
@@ -623,8 +597,7 @@ export const EN: Dict = {
     back: 'Back to home page',
   },
   footer: {
-    about:
-      'Car tinting and detailing studio. Premium materials, clean-bay work and a written warranty.',
+    about: 'Car tinting and detailing studio. Premium materials and clean-bay work.',
     rights: 'All rights reserved.',
     legal: 'We advise on the tint levels permitted by law.',
     navTitle: 'Navigation',
