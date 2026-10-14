@@ -19,7 +19,6 @@ export const RO: Dict = {
     bookNow: 'Programează-te',
     learnMore: 'Detalii',
     allServices: 'Toate serviciile',
-    duration: 'Durata',
     skipToContent: 'Salt la conținut',
     language: 'Limba',
     writeUs: 'Scrie-ne',
@@ -33,7 +32,7 @@ export const RO: Dict = {
     home: {
       title: 'Tonare și detailing auto în Chișinău | Tonirovka.md',
       description:
-        'Tonare geamuri, colantare caroserie și faruri, polish, curățare chimică, cer înstelat și iluminare ambientală în Chișinău. Garanție până la 10 ani.',
+        'Tonare geamuri, colantare caroserie și faruri, polish, curățare chimică, cer înstelat și iluminare ambientală în Chișinău.',
     },
     services: {
       title: 'Servicii de tonare și detailing în Chișinău | Tonirovka.md',
@@ -48,7 +47,7 @@ export const RO: Dict = {
     faq: {
       title: 'Întrebări frecvente despre tonarea auto | Tonirovka.md',
       description:
-        'Cât durează tonarea, cât timp nu poți coborî geamurile, ce folie să alegi și cum îngrijești tonarea. Răspunsuri de la specialiștii Tonirovka.md.',
+        'Cât timp nu poți coborî geamurile, ce folie să alegi și cum îngrijești tonarea. Răspunsuri de la specialiștii Tonirovka.md.',
     },
     contacts: {
       title: 'Contacte și programare — tonare auto Chișinău | Tonirovka.md',
@@ -64,10 +63,10 @@ export const RO: Dict = {
     badge: 'Tonare și detailing în Chișinău',
     title: 'Tonare auto',
     titleAccent: 'fără compromisuri',
-    text: 'Folii premium, montaj într-o cameră curată, fără bule și fără praf. Plus colantare, polish, curățare chimică și tuning de interior — totul într-un singur studio, cu garanție scrisă.',
+    text: 'Folii premium, montaj într-o cameră curată, fără bule și fără praf. Plus colantare, polish, curățare chimică și tuning de interior — totul într-un singur studio.',
     ctaPrimary: 'Programează-te',
     ctaSecondary: 'Toate serviciile',
-    stats: { years: 'ani de experiență', cars: 'mașini tonate', warranty: 'ani garanție' },
+    stats: { years: 'ani de experiență', cars: 'mașini tonate' },
     tintTitle: 'Alege nivelul de tonare',
     tintText:
       'Mișcă selectorul și vezi cum se schimbă aspectul mașinii. Procentul arată câtă lumină trece prin geam: cu cât e mai mic, cu atât geamul e mai închis.',
@@ -94,13 +93,13 @@ export const RO: Dict = {
       },
       {
         icon: 'shield',
-        title: 'Garanție scrisă',
-        text: 'Oferim garanție de până la 10 ani pentru folie și montaj. Orice defect îl remediem gratuit.',
+        title: 'Lucru atent',
+        text: 'Protejăm garniturile, ornamentele și electronica în timpul lucrului și îți predăm mașina curată.',
       },
       {
-        icon: 'clock',
-        title: 'În aceeași zi',
-        text: 'Tonarea completă durează 2–4 ore. Lași mașina dimineața — o iei după-amiază.',
+        icon: 'tinting',
+        title: 'Totul într-un studio',
+        text: 'Tonare, colantare, polish, curățare chimică și tuning de interior — o singură programare, un singur loc.',
       },
       {
         icon: 'chat',
@@ -124,7 +123,7 @@ export const RO: Dict = {
       },
       {
         title: 'Predare',
-        text: 'Verificăm fiecare geam, îți dăm garanția și sfaturi de îngrijire.',
+        text: 'Verificăm fiecare geam și îți dăm sfaturi de îngrijire.',
       },
     ],
     filmsTitle: 'Ce folie să alegi',
@@ -177,7 +176,6 @@ export const RO: Dict = {
       { label: 'Reducere căldură', values: ['până la 30%', 'până la 70%'] },
       { label: 'Nu se decolorează', values: ['—', '✓'] },
       { label: 'Fără interferențe GPS/GSM', values: ['✓', '✓'] },
-      { label: 'Garanție', values: ['3 ani', '10 ani'] },
     ],
     popular: 'Popular',
   },
@@ -188,7 +186,7 @@ export const RO: Dict = {
       seo: {
         title: 'Tonare geamuri auto Chișinău — de la 60 € | Tonirovka.md',
         description:
-          'Tonare geamuri auto cu folie standard și ceramică, de la 5% la 70%. Montaj în cameră curată, fără bule, garanție până la 10 ani. Programare rapidă.',
+          'Tonare geamuri auto cu folie standard și ceramică, de la 5% la 70%. Montaj în cameră curată, fără bule. Programare rapidă.',
       },
       h1: 'Tonare geamuri auto',
       intro:
@@ -205,7 +203,6 @@ export const RO: Dict = {
         'Ține cioburile la loc în caz de spargere a geamului',
         'Reduce orbirea de la soare și farurile din spate',
       ],
-      duration: '2–4 ore',
       priceFrom: 60,
       faq: [
         {
@@ -235,7 +232,7 @@ export const RO: Dict = {
         'Folia de protecție solară reduce căldura și orbirea, dar păstrează vederea clară și lumina naturală. Folia oglindă reflectă până la 80% din energia solară, iar ziua, din exterior, geamul arată ca o oglindă — nimeni nu vede înăuntru.',
         'Folia mată lasă lumina să treacă, dar ascunde ce se află în spatele sticlei: ideală pentru pereții de sticlă din birouri, sălile de ședințe, uși și geamurile de la baie. Pe vitrine aplicăm și folii decorative, benzi și logo decupat.',
         'Folia de siguranță, mai groasă, ține sticla întreagă la lovitură și îngreunează spargerea geamului — potrivită pentru vitrine și apartamente de la parter.',
-        'Venim la măsurare, îți arătăm mostre direct pe geamul tău și calculăm prețul după suprafața vitrată. Montajul se face curat, fără demontarea geamurilor: o echipă tonează 20–40 m² pe zi.',
+        'Venim la măsurare, îți arătăm mostre direct pe geamul tău și calculăm prețul după suprafața vitrată. Montajul se face curat, fără demontarea geamurilor.',
         'Geamurile se pot spăla după 30 de zile, cu o lavetă moale și detergent fără particule abrazive.',
       ],
       benefits: [
@@ -246,7 +243,6 @@ export const RO: Dict = {
         'Sticla ține cioburile la impact',
         'Fără schimbarea geamurilor, iar folia se poate scoate oricând',
       ],
-      duration: 'de la 1 zi',
       priceFrom: null,
       priceNote: 'Prețul final depinde de tipul foliei și de suprafața vitrată.',
       faq: [
@@ -293,7 +289,6 @@ export const RO: Dict = {
         'Aspect sport cu folie fumurie',
         'Se scoate fără urme',
       ],
-      duration: '1–2 ore',
       priceFrom: 100,
       faq: [],
     },
@@ -318,7 +313,6 @@ export const RO: Dict = {
         'Păstrează valoarea mașinii la vânzare',
         'Se scoate fără a afecta vopseaua',
       ],
-      duration: 'de la 1 zi',
       priceFrom: 300,
       priceUnit: 'per element',
       faq: [],
@@ -344,7 +338,6 @@ export const RO: Dict = {
         'Sigur — controlăm grosimea lacului',
         'Pregătire perfectă înainte de vânzare',
       ],
-      duration: '1–2 zile',
       priceFrom: 200,
       faq: [],
     },
@@ -369,7 +362,6 @@ export const RO: Dict = {
         'Îngrijire atentă a pielii și alcantarei',
         'Interior uscat la predare',
       ],
-      duration: '4–8 ore',
       priceFrom: 100,
       faq: [],
     },
@@ -386,15 +378,14 @@ export const RO: Dict = {
         'Ceața uscată pătrunde în tapițerie, plafon și conductele de aer și distruge moleculele mirosului, nu doar îl maschează.',
       body: [
         'Generatorul transformă lichidul neutralizator în particule foarte fine, care umplu tot habitaclul, inclusiv sistemul de ventilație, fără a lăsa umezeală.',
-        'Procedura durează aproximativ o jumătate de oră, iar după aerisire rămâne doar o aromă ușoară și neutră. Completează perfect curățarea chimică.',
+        'După aerisire rămâne doar o aromă ușoară și neutră. Completează perfect curățarea chimică.',
       ],
       benefits: [
         'Elimină mirosul de tutun, animale și umezeală',
         'Pătrunde în ventilație și tapițerie',
         'Nu lasă umezeală sau urme',
-        'Aproximativ 30 de minute',
+        'Nu lasă umezeală sau reziduuri',
       ],
-      duration: '30–40 de minute',
       priceFrom: 20,
       faq: [],
     },
@@ -419,7 +410,6 @@ export const RO: Dict = {
         'Stâlpi și parasolare în ton',
         'Se combină cu cerul înstelat',
       ],
-      duration: '1–2 zile',
       priceFrom: 250,
       faq: [],
     },
@@ -444,7 +434,6 @@ export const RO: Dict = {
         'Cablare ascunsă și îngrijită',
         'Efect de interior premium',
       ],
-      duration: '1 zi',
       priceFrom: 300,
       faq: [],
     },
@@ -469,7 +458,6 @@ export const RO: Dict = {
         'Schimbarea culorii de pe telefon',
         'Fibra optică nu se încălzește',
       ],
-      duration: '1–2 zile',
       priceFrom: 400,
       faq: [],
     },
@@ -491,10 +479,9 @@ export const RO: Dict = {
       benefits: [
         'Test de scurgeri înainte de încărcare',
         'Doză exactă conform producătorului',
-        'Aer rece în 30–60 de minute',
+        'Din nou aer rece în habitaclu',
         'Tratament antibacterian la cerere',
       ],
-      duration: '30–60 de minute',
       priceFrom: 40,
       faq: [],
     },
@@ -519,7 +506,6 @@ export const RO: Dict = {
         'Se spală într-un minut',
         'Culoarea celulelor și bordurii la alegere',
       ],
-      duration: '1–3 zile',
       priceFrom: 50,
       faq: [],
     },
@@ -553,10 +539,6 @@ export const RO: Dict = {
     intro: 'Am adunat răspunsurile la cele mai frecvente întrebări ale clienților noștri.',
     items: [
       {
-        q: 'Cât durează tonarea completă a mașinii?',
-        a: 'De obicei 2–4 ore, în funcție de model și numărul de geamuri. Bandă parasolar — aproximativ 30 de minute.',
-      },
-      {
         q: 'Cât timp nu pot coborî geamurile după tonare?',
         a: '3–5 zile. În acest timp adezivul se fixează complet. Pe vreme rece perioada poate fi puțin mai lungă.',
       },
@@ -569,20 +551,12 @@ export const RO: Dict = {
         a: 'Ambele blochează 99% din UV. Folia ceramică reține semnificativ mai multă căldură, are o claritate mai bună și nu se decolorează, dar costă mai mult.',
       },
       {
-        q: 'Ce garanție oferiți?',
-        a: 'În funcție de folie — de la 3 până la 10 ani. Garanția acoperă decolorarea, dezlipirea și apariția bulelor.',
-      },
-      {
         q: 'Cum îngrijesc geamurile tonate?',
         a: 'Spală-le cu o lavetă moale din microfibră și soluții fără amoniac. Evită obiectele abrazive și racleta pe partea interioară.',
       },
       {
         q: 'Folia afectează încălzirea lunetei?',
         a: 'Nu. Folia se aplică peste firele de încălzire și nu le afectează funcționarea. La detonare lucrăm cu grijă ca firele să rămână intacte.',
-      },
-      {
-        q: 'Trebuie să las mașina pe toată ziua?',
-        a: 'Nu. Majoritatea lucrărilor sunt gata în câteva ore. Poți aștepta în zona noastră de așteptare sau te anunțăm când mașina e gata.',
       },
     ],
   },
@@ -629,8 +603,7 @@ export const RO: Dict = {
     back: 'Înapoi la pagina principală',
   },
   footer: {
-    about:
-      'Studio de tonare și detailing auto. Materiale premium, lucru în cameră curată și garanție scrisă.',
+    about: 'Studio de tonare și detailing auto. Materiale premium și lucru în cameră curată.',
     rights: 'Toate drepturile rezervate.',
     legal: 'Te consultăm privind nivelurile de tonare permise de legislație.',
     navTitle: 'Navigare',

@@ -14,7 +14,6 @@ export interface ServiceContent {
   intro: string;
   body: string[];
   benefits: string[];
-  duration: string;
   /** Starting price in euros; null = price on request. */
   priceFrom: number | null;
   /** What the price is for, shown after it, e.g. "per panel". */
@@ -34,7 +33,6 @@ export interface Dict {
     bookNow: string;
     learnMore: string;
     allServices: string;
-    duration: string;
     skipToContent: string;
     language: string;
     writeUs: string;
@@ -52,7 +50,7 @@ export interface Dict {
     text: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    stats: { years: string; cars: string; warranty: string };
+    stats: { years: string; cars: string };
     tintTitle: string;
     tintText: string;
     servicesTitle: string;

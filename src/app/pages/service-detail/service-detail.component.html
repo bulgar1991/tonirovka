@@ -18,13 +18,6 @@
     >
       <app-service-price [service]="service()" data-testid="service-price" />
     </span>
-    <span
-      data-testid="service-duration"
-      class="flex items-center gap-2 rounded-full border border-ink-700 bg-ink-950/40 px-4 py-2 text-sm text-ink-300 backdrop-blur"
-    >
-      <app-icon name="clock" [size]="16" class="text-brand-500" />{{ t.common.duration }}:
-      {{ s.duration }}
-    </span>
     <a
       appScrollTo="booking"
       [page]="i18n.link('service', service())"
