@@ -2,4 +2,8 @@ export const environment = {
   // Web3Forms access key - get one free at https://web3forms.com (it's tied to the email that receives
   // the form). This key is meant to be public: it can only send emails to that one address.
   web3formsKey: '4bc28b4b-92d7-485e-8ce9-1f0b04274437',
+
+  // Google Analytics 4 measurement ID (G-XXXXXXXXXX), from analytics.google.com → Admin → Data
+  // streams → Web. Public by design. Leave empty to turn tracking off.
+  gaMeasurementId: 'G-GVLGBHMJ03',
 };
